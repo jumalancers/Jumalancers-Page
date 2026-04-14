@@ -86,7 +86,7 @@ export default function Footer() {
                   href="mailto:jumalancers@gmail.com"
                   className="hover:text-primary-400 transition"
                 >
-                  jumalancers@gmail.com
+                  contacto@jumalancers.com
                 </a>
               </li>
               <li>

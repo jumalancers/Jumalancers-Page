@@ -2,10 +2,10 @@ import { useMemo, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useLang } from "../i18n.jsx";
 
-const EMAIL_TO = "jumalancers@gmail.com";
+const EMAIL_TO = "contacto@jumalancers.com";
 
 // Pon tu número en formato internacional SIN + y sin espacios, ejemplo: 526641234567
-const WHATSAPP_NUMBER = "526644257324";
+const WHATSAPP_NUMBER = "526641111859";
 
 export default function ContactSection() {
   const { t, lang } = useLang();
