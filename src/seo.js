@@ -71,7 +71,7 @@ export function jsonLd(lang) {
   const orgId = `${BASE_URL}/#organization`;
   const businessId = `${BASE_URL}/#business`;
   const websiteId = `${BASE_URL}/#website`;
-  const phone = "+52-664-111-1859";
+  const phone = "+52-664-425-7324";
   const logo = {
     "@type": "ImageObject",
     "@id": `${BASE_URL}/#logo`,
