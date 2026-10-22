@@ -1,0 +1,91 @@
+// Textos de la sección "process" (es/en).
+export default {
+  es: {
+    eyebrow: "Cómo trabajamos",
+    title: "Un proceso claro, de la idea al",
+    accent: "lanzamiento",
+    desc: "Sin sorpresas ni tecnicismos: sabes qué pasa en cada etapa, cuándo y qué necesitamos de ti.",
+    totalLabel: "Tiempo total de entrega",
+    totalValue: "7–21 días hábiles",
+    totalNote: "Según el plan y el alcance. Los tiempos por etapa son aproximados, en días hábiles.",
+    stepLabel: "Paso",
+    steps: [
+      {
+        when: "Día 1",
+        title: "Llamada de descubrimiento",
+        desc: "Una llamada breve para entender tu negocio, tus servicios y el cliente que quieres atraer.",
+        bullets: ["Objetivos y cliente ideal", "Mensaje y tono", "Logo, colores, fotos y testimonios"],
+      },
+      {
+        when: "Días 2–4",
+        title: "Estructura y dirección de diseño",
+        desc: "Definimos secciones y estilo visual alineados a tu marca, pensados para convertir visitas en clientes.",
+        bullets: ["Mapa de secciones", "Estructura orientada a conversión", "Dirección visual de marca"],
+      },
+      {
+        when: "Días 5–14",
+        title: "Desarrollo con vista previa privada",
+        desc: "Construimos tu sitio y te compartimos un enlace privado para que veas el avance en tiempo real.",
+        bullets: ["Diseño adaptable a móvil", "Rendimiento y SEO técnico desde el inicio", "Avances por WhatsApp o correo"],
+      },
+      {
+        when: "Días 7–21",
+        title: "Revisiones y lanzamiento",
+        desc: "Pulimos cada detalle en rondas de revisión y publicamos con dominio y SSL configurados.",
+        bullets: ["Rondas de ajustes incluidas", "Revisión final en todos los dispositivos", "Publicación y entrega"],
+      },
+      {
+        when: "Después",
+        title: "Soporte continuo",
+        desc: "Seguimos disponibles para cambios, nuevas secciones o mejoras.",
+        bullets: ["Ajustes y actualizaciones", "Respuesta en menos de 24 h", "Nuevas secciones cuando las necesites"],
+      },
+    ],
+    cta: "Iniciar mi proyecto",
+    ctaNote: "Sin compromiso · Respuesta en menos de 24 h",
+  },
+  en: {
+    eyebrow: "How we work",
+    title: "A clear process, from idea to",
+    accent: "launch",
+    desc: "No surprises, no jargon: you know what happens at each stage, when, and what we need from you.",
+    totalLabel: "Total delivery time",
+    totalValue: "7–21 business days",
+    totalNote: "Depends on the plan and scope. Stage timings are approximate, in business days.",
+    stepLabel: "Step",
+    steps: [
+      {
+        when: "Day 1",
+        title: "Discovery call",
+        desc: "A short call to learn about your business, your services and the customers you want to attract.",
+        bullets: ["Goals and ideal customer", "Message and tone", "Logo, colors, photos and reviews"],
+      },
+      {
+        when: "Days 2–4",
+        title: "Structure & design direction",
+        desc: "We plan the sections and a visual style that fits your brand, built to turn visitors into customers.",
+        bullets: ["Section map", "Conversion-focused layout", "Brand visual direction"],
+      },
+      {
+        when: "Days 5–14",
+        title: "Development with private preview",
+        desc: "We build your site and share a private link so you can watch progress in real time.",
+        bullets: ["Mobile-first build", "Performance and technical SEO from day one", "Updates by WhatsApp or email"],
+      },
+      {
+        when: "Days 7–21",
+        title: "Revisions & launch",
+        desc: "We refine every detail in revision rounds, then launch with your domain and SSL set up.",
+        bullets: ["Revision rounds included", "Final review on every device", "Deployment and handoff"],
+      },
+      {
+        when: "Ongoing",
+        title: "Continued support",
+        desc: "We stay available for changes, new sections or improvements.",
+        bullets: ["Edits and updates", "Replies within 24 hours", "New sections when you need them"],
+      },
+    ],
+    cta: "Start my project",
+    ctaNote: "No commitment · Reply within 24 hours",
+  },
+};

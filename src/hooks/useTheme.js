@@ -1,26 +1,17 @@
 import { useEffect, useState } from "react";
 
+// El sitio es SIEMPRE oscuro (decisión de diseño: "todo oscuro").
+// Se mantiene la misma API (theme/toggleTheme) para no romper imports.
 export default function useTheme() {
-  const [theme, setTheme] = useState("light"); // light | dark
+  const [theme] = useState("dark");
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const preferred =
-      saved ||
-      (window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-        ? "dark"
-        : "light");
-
-    setTheme(preferred);
-    document.documentElement.setAttribute("data-theme", preferred);
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
   }, []);
 
-  const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  };
+  // Toggle deshabilitado a propósito; el sitio se queda oscuro.
+  const toggleTheme = () => {};
 
   return { theme, toggleTheme };
 }

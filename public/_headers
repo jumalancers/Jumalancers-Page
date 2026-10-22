@@ -1,0 +1,37 @@
+# Cloudflare Pages — cabeceras
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+# HTML: siempre revalidar (el contenido cambia en cada deploy)
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/en/
+  Cache-Control: public, max-age=0, must-revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Assets con hash de Vite: inmutables 1 año
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Capturas e imágenes públicas (sin hash): 7 días + revalidación en segundo plano
+/work/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/portfolio/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/mockups/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.png
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.jpg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+/robots.txt
+  Cache-Control: public, max-age=3600

@@ -1,0 +1,48 @@
+# Jumalancers (JM Web Studio)
+
+> Web design and development studio based in Tijuana, Baja California, Mexico (Pacific Time, same time zone as California). We build fast, SEO-ready websites, landing pages and custom web apps for small businesses in the United States and Mexico, in English, Spanish, bilingual or other languages, at fixed prices in USD.
+
+Estudio de diseño y desarrollo web en Tijuana: diseño de páginas web, landing pages y sistemas web a medida para negocios en México y EE. UU., en español, inglés o bilingües.
+
+## Key pages
+
+- [Inicio (español)](https://jumalancers.com/): Diseño de páginas web en Tijuana — servicios, portafolio, proceso, planes, cotizador y contacto.
+- [Home (English)](https://jumalancers.com/en/): Web design & development for small businesses — services, portfolio, process, pricing, quote tool and contact.
+
+## Services
+
+- Website design and development (custom design, mobile-first, fast, on-page SEO).
+- Landing pages for Google Ads / Meta Ads campaigns.
+- Custom web apps and systems: dashboards, quoting catalogs, ordering and booking systems, internal tools, automations.
+- E-commerce and digital catalogs.
+- Local SEO and Google Business Profile setup.
+- Domain, hosting, SSL, professional email, maintenance and support.
+
+## Pricing (one-time, fixed, USD)
+
+- Starter: $599 — 1 page (up to 6 sections), domain + hosting + SSL for the first year, 1 business email, 7–10 business days.
+- Business: $1,199 — 2–3 pages, improved SEO, 3 business emails, 10–14 business days.
+- Premium: $1,999 — 4–6 pages, basic branding, advanced SEO and performance, analytics, 5 business emails, 14–21 business days.
+- Systems / Apps: from $2,999 — 7+ page sites or web apps with database, login, dashboards, roles and reports. App hosting $79–149/month.
+- Renewal after the first year (domain + hosting + SSL): Starter $99/year, Business $149/year, Premium $199/year; includes 2 content updates per year. Extra updates: $29 USD each (up to 10 images or one text block) or $39 USD/month for 4 updates a month.
+- Payment: fixed-price proposal; USD or MXN by bank transfer to an account in Mexico.
+- Each plan includes one language (English or Spanish). Extras: bilingual or additional languages, pages with more than 6 sections, blog, booking, payments, integrations, extra email accounts ($19/year each).
+
+## Clients and selected work
+
+<!-- clients:start -->
+- [JM & AN Abogados](https://jmyanabogados.com): Law firm — Tijuana, BC (Mexico)
+- [Jaka Express](https://www.jakaexpress.com): Cross-border logistics — Tijuana, BC (Mexico)
+- [Waldo Distribuciones](https://waldodistribuciones.com): Distributor + quoting catalog — Tijuana, BC (Mexico)
+- [TodoMex Paquetería](https://todomexpaqueteria.com): Parcel delivery — Tijuana, BC (Mexico)
+<!-- clients:end -->
+
+## Contact
+
+- Email: contacto@jumalancers.com
+- WhatsApp / phone: +52 664 111 1859 (https://wa.me/526641111859)
+- Location: Tijuana, Baja California, Mexico (Pacific Time) — serving clients in the United States and Mexico, remotely.
+- Response time: under 24 hours, by WhatsApp or email, in English or Spanish.
+- Instagram: https://instagram.com/jumalancers
+- Facebook: https://www.facebook.com/profile.php?id=61587112451778
+- Languages: Spanish, English

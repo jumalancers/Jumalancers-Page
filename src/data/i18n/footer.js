@@ -1,0 +1,63 @@
+// Textos de la sección "footer" (es/en).
+export default {
+  es: {
+    ctaEyebrow: "Hablemos de tu proyecto",
+    ctaTitle: "¿Listo para tu",
+    ctaAccent: "nuevo sitio?",
+    ctaDesc:
+      "Cuéntanos qué necesitas y te enviamos una propuesta con precio y tiempos claros, sin compromiso.",
+    ctaQuote: "Cotizar mi sitio",
+    ctaWhatsapp: "Escribir por WhatsApp",
+    waMessage: "Hola Jumalancers, me interesa cotizar un sitio web.",
+    brandDesc:
+      "Estudio de diseño y desarrollo web en Tijuana. Páginas web rápidas, landing pages y sistemas web a medida para negocios en México y EE. UU.",
+    navTitle: "Navegación",
+    servicesTitle: "Servicios",
+    services: [
+      "Landing pages",
+      "Sitios web corporativos",
+      "Sistemas web a medida",
+      "E-commerce y catálogos",
+      "SEO y rendimiento",
+      "Mantenimiento web",
+    ],
+    contactTitle: "Contacto",
+    whatsapp: "WhatsApp",
+    location: "Tijuana, B.C., México",
+    serving: "Atendemos México y EE. UU.",
+    social: "Síguenos",
+    rights: "Todos los derechos reservados.",
+    madeIn: "Hecho en Tijuana con React y Vite.",
+    backToTop: "Volver arriba",
+  },
+  en: {
+    ctaEyebrow: "Let's talk about your project",
+    ctaTitle: "Ready for your",
+    ctaAccent: "new website?",
+    ctaDesc:
+      "Tell us what you need and get a clear proposal with a fixed price and timeline. No strings attached.",
+    ctaQuote: "Get a free quote",
+    ctaWhatsapp: "Message on WhatsApp",
+    waMessage: "Hi Jumalancers, I'd like a quote for a website.",
+    brandDesc:
+      "Web design studio in Tijuana, on Pacific Time. Fast websites, bilingual sites and custom web apps for small businesses in the US and Mexico.",
+    navTitle: "Navigation",
+    servicesTitle: "Services",
+    services: [
+      "Landing pages",
+      "Business websites",
+      "Custom web apps",
+      "E-commerce & catalogs",
+      "SEO & performance",
+      "Website maintenance",
+    ],
+    contactTitle: "Contact",
+    whatsapp: "WhatsApp",
+    location: "Tijuana, B.C., Mexico",
+    serving: "Serving the US and Mexico · Pacific Time",
+    social: "Follow us",
+    rights: "All rights reserved.",
+    madeIn: "Made in Tijuana with React and Vite.",
+    backToTop: "Back to top",
+  },
+};
