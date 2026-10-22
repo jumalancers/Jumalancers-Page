@@ -1,8 +1,9 @@
-import { ArrowUpRight, Globe2, Languages, MonitorCheck, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Globe2, Languages, MonitorCheck, ArrowRight, Star } from "lucide-react";
 import { useLang } from "../i18n.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { Section, SectionHeader } from "../components/ui/index.jsx";
 import { PROJECTS, shot } from "../data/projects.js";
+import { SITE } from "../data/site.js";
 
 const fill = (str, vars) =>
   String(str).replace(/\{(\w+)\}/g, (_, k) => (vars[k] ?? `{${k}}`));
@@ -144,7 +145,16 @@ export default function Testimonials() {
             })}
           </ul>
         </div>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-4">
+          <a
+            href={SITE.googleReview}
+            target="_blank"
+            rel="noopener"
+            className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 text-center text-sm font-medium text-text-700 transition hover:text-primary-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+          >
+            <Star className="h-4 w-4 text-[#febc2e]" aria-hidden="true" />
+            {t("testimonials.reviewCta")}
+          </a>
           <a
             href="#portfolio"
             className="group inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm font-medium text-text-700 transition hover:text-primary-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"

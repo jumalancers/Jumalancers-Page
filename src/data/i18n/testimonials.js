@@ -28,6 +28,7 @@ export default {
       bilingual: { value: "ES · EN · +", label: "sitios multi-idioma", sub: "Español, inglés u otros idiomas" },
     },
     portfolioCta: "Ver todos los proyectos",
+    reviewCta: "¿Ya trabajaste con nosotros? Déjanos tu reseña en Google",
   },
   en: {
     badge: "Testimonials",
@@ -55,5 +56,6 @@ export default {
       bilingual: { value: "EN · ES · +", label: "multilingual websites", sub: "English, Spanish or other languages" },
     },
     portfolioCta: "See all projects",
+    reviewCta: "Worked with us? Leave us a Google review",
   },
 };

@@ -8,6 +8,7 @@ export const SITE = {
   city: "Tijuana, Baja California, México",
   instagram: "https://instagram.com/jumalancers",
   facebook: "https://www.facebook.com/profile.php?id=61587112451778",
+  googleReview: "https://g.page/r/CeQdqxbPXpwWEAI/review",
 };
 
 export const waLink = (text = "") =>
