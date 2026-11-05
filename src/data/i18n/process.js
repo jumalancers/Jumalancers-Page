@@ -56,8 +56,8 @@ export default {
     steps: [
       {
         when: "Day 1",
-        title: "Discovery call",
-        desc: "A short call to learn about your business, your services and the customers you want to attract.",
+        title: "Getting to know your business",
+        desc: "We go over your business, your services and the customers you want to attract, all by WhatsApp or email.",
         bullets: ["Goals and ideal customer", "Message and tone", "Logo, colors, photos and reviews"],
       },
       {

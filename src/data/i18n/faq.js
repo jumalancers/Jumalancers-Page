@@ -26,7 +26,7 @@ export default {
       },
       {
         q: "¿Atienden negocios en Estados Unidos?",
-        a: "Sí, atendemos negocios en México y en EE. UU. Hacemos sitios en inglés o bilingües para clientes en Estados Unidos, con precios en USD, y coordinamos todo en línea por WhatsApp, correo o videollamada, en español o en inglés. Estamos en Tijuana, en la zona horaria del Pacífico, la misma de California.",
+        a: "Sí, atendemos negocios en México y en EE. UU. Hacemos sitios en inglés o bilingües para clientes en Estados Unidos, con precios en USD, y coordinamos todo en línea por WhatsApp o correo, en español o en inglés. Estamos en Tijuana, en la zona horaria del Pacífico, la misma de California.",
       },
       {
         q: "¿Mi sitio puede estar en inglés, ser bilingüe o en otros idiomas?",
@@ -79,7 +79,7 @@ export default {
       },
       {
         q: "Do you work with businesses in the United States?",
-        a: "Yes. We build English and bilingual websites for US businesses, with fixed prices in USD, and handle everything online by WhatsApp, email or video call, in English. We're based in Tijuana, on Pacific Time, the same time zone as California.",
+        a: "Yes. We build English and bilingual websites for US businesses, with fixed prices in USD, and handle everything online by WhatsApp or email, in English. We're based in Tijuana, on Pacific Time, the same time zone as California.",
       },
       {
         q: "Can I get a bilingual (English and Spanish) website?",

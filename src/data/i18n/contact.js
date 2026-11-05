@@ -116,7 +116,7 @@ export default {
       title: "What happens after you reach out",
       steps: [
         { title: "We reply", desc: "Within 24 hours, with a few quick questions about your business." },
-        { title: "Quick call", desc: "15–20 minutes on your goals, scope and timeline." },
+        { title: "Goals and scope", desc: "We go over your goals, scope and timeline by WhatsApp or email." },
         { title: "Clear proposal", desc: "Fixed price, deliverables and delivery date in writing." },
       ],
     },
