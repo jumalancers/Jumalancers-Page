@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>EDGE Cleaning Service | Premium House Cleaning in Renton, WA</title>
+<meta name="description" content="Family-owned, award-winning house cleaning and deep home detailing in Renton and the Seattle area. Eco-friendly products, hypoallergenic vacuums, 4.8★ on Google.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#061526;--navy2:#0b2038;--ink:#0e1b2b;--muted:#5b6b7e;--line:#e3e9f0;--soft:#f3f7fb;--cyan:#38c6f4;--cyan2:#0db5ec;--white:#fff;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.f{font-family:Outfit,Inter,sans-serif;line-height:1.1;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font:600 16px Outfit,sans-serif;transition:.2s;cursor:pointer;border:0}
+.btn-c{background:var(--cyan);color:var(--navy);box-shadow:0 10px 30px -10px rgba(56,198,244,.7)}
+.btn-c:hover{background:#5fd3f7;transform:translateY(-2px)}
+.btn-o{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn-o:hover{background:rgba(255,255,255,.08)}
+.eyebrow{font:600 13px Outfit,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan2)}
+section{padding:96px 0}
+.sec-h{max-width:640px;margin-bottom:48px}
+.sec-h h2{font-size:clamp(32px,4.4vw,48px);margin:10px 0 14px}
+.sec-h p{color:var(--muted);font-size:18px}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:.25s}
+header.solid{background:rgba(6,21,38,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav .logo img{height:50px;width:auto}
+.menu{display:flex;gap:26px;align-items:center;color:#dbe7f3;font:500 15px Outfit,sans-serif}
+.menu a:hover{color:var(--cyan)}
+.dd{position:relative}
+.dd>a::after{content:"▾";font-size:11px;margin-left:5px;opacity:.7}
+.dd-m{position:absolute;top:100%;left:-16px;padding-top:12px;display:none}
+.dd-m div{background:#fff;border-radius:14px;padding:8px;min-width:240px;box-shadow:0 20px 50px -10px rgba(0,0,0,.35)}
+.dd-m a{display:block;color:var(--ink);padding:10px 14px;border-radius:9px}
+.dd-m a:hover{background:var(--soft);color:var(--cyan2)}
+.dd:hover .dd-m{display:block}
+.nav-r{display:flex;align-items:center;gap:18px}
+.tel{color:#fff;font:600 15px Outfit,sans-serif;display:flex;align-items:center;gap:8px}
+.nav .btn{padding:11px 20px;font-size:15px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;border-radius:2px}
+.mob{display:none}
+
+/* hero */
+.hero{position:relative;min-height:min(100vh,920px);display:flex;align-items:center;color:#fff;padding:120px 0 70px;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background:url(img/hero.jpg) center 30%/cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,21,38,.96) 0%,rgba(6,21,38,.82) 42%,rgba(6,21,38,.25) 100%)}
+.hero .wrap{position:relative;width:100%}
+.hero-c{max-width:620px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:rgba(56,198,244,.12);border:1px solid rgba(56,198,244,.35);font:500 14px Outfit,sans-serif;color:#c9eefc}
+.pill b{background:var(--cyan);color:var(--navy);border-radius:999px;padding:2px 10px;font-weight:700}
+.hero h1{font-size:clamp(44px,6.6vw,78px);font-weight:800;margin:22px 0 20px}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:#c4d3e3;max-width:540px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 40px}
+.trust{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.trust .t{display:flex;align-items:center;gap:10px;font-size:14px;color:#c4d3e3}
+.trust .t strong{color:#fff;font:700 18px Outfit,sans-serif;display:block;line-height:1.1}
+.stars{color:#ffc940;letter-spacing:2px}
+.trust img{height:62px;width:auto}
+
+/* social strip */
+.strip{background:var(--cyan);color:var(--navy);padding:22px 0}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.strip p{font:600 clamp(17px,2vw,21px) Outfit,sans-serif}
+.strip p b{font-weight:800}
+.soc{display:flex;gap:10px}
+.soc a{width:44px;height:44px;border-radius:50%;background:var(--navy);display:grid;place-items:center;transition:.2s}
+.soc a:hover{transform:translateY(-2px)}
+.soc svg{width:20px;height:20px;fill:#fff}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -25px rgba(6,21,38,.35)}
+.card .ph{aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:24px;margin-bottom:10px}
+.card p{color:var(--muted);flex:1}
+.card .more{margin-top:18px;font:600 15px Outfit,sans-serif;color:var(--cyan2)}
+.tag{font:600 12px Outfit,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan2);margin-bottom:8px}
+
+/* difference */
+.diff{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.diff .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.diff .sec-h p{color:#a9bccf}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feat{background:var(--navy2);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px}
+.ic{width:46px;height:46px;border-radius:12px;background:rgba(56,198,244,.14);display:grid;place-items:center;margin-bottom:14px}
+.ic svg{width:24px;height:24px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:18px;margin-bottom:6px}
+.feat p{color:#a9bccf;font-size:15px}
+.diff-ph{position:relative}
+.diff-ph img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.badge-f{position:absolute;left:-24px;bottom:32px;background:#fff;color:var(--ink);border-radius:16px;padding:16px 20px;box-shadow:0 20px 40px -10px rgba(0,0,0,.4);display:flex;gap:14px;align-items:center}
+.badge-f .n{font:800 36px Outfit,sans-serif;color:var(--cyan2)}
+.badge-f span{font-size:14px;color:var(--muted);line-height:1.3}
+
+/* video */
+.vid{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center}
+.yt{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:16/9;background:#000 center/cover;cursor:pointer;box-shadow:0 30px 70px -30px rgba(6,21,38,.6)}
+.yt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.45))}
+.yt .play{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;background:var(--cyan);display:grid;place-items:center;z-index:2;transition:.2s;box-shadow:0 0 0 12px rgba(56,198,244,.25)}
+.yt:hover .play{transform:scale(1.08)}
+.yt .play svg{width:30px;margin-left:5px;fill:var(--navy)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+.quote{font:600 clamp(22px,2.6vw,30px) Outfit,sans-serif;line-height:1.3;margin:16px 0 18px}
+.sig{color:var(--muted)}
+
+/* gallery */
+.gal{background:var(--soft)}
+.gg{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px}
+.gg img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.gg img:first-child{grid-row:span 2}
+
+/* checklist */
+.chk{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.chk .c{border:1px solid var(--line);border-radius:16px;padding:24px}
+.chk h3{font-size:19px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.chk ul{list-style:none;display:grid;gap:8px;font-size:15px;color:#33465a}
+.chk li{display:flex;gap:9px}
+.chk li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:rgba(56,198,244,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230db5ec' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.chk-cta{margin-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;background:var(--soft);border-radius:16px;padding:20px 24px}
+.chk-cta p{color:var(--muted)}
+.chk-cta a{font:600 16px Outfit,sans-serif;color:var(--cyan2)}
+
+/* story */
+.story{background:var(--navy);color:#fff}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.story img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.story p{color:#b7c8da;font-size:17px;margin-bottom:16px}
+.vals{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.vals span{border:1px solid rgba(56,198,244,.4);color:#c9eefc;border-radius:999px;padding:8px 16px;font:500 14px Outfit,sans-serif}
+
+/* reviews */
+.rev{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:20px}
+.rv{border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.rv.big{background:linear-gradient(140deg,var(--navy),#0e2d4f);color:#fff;border:0}
+.rv .score{font:800 76px Outfit,sans-serif;line-height:1}
+.rv .stars{font-size:22px}
+.rv .src{display:flex;align-items:center;gap:10px;font:600 16px Outfit,sans-serif}
+.rv p{color:var(--muted)}
+.rv.big p{color:#b7c8da}
+.rv a.l{font:600 15px Outfit,sans-serif;color:var(--cyan2)}
+.rv.big a.l{color:var(--cyan)}
+.rv img.aw{height:110px;width:auto}
+
+/* faq */
+.faq{background:var(--soft)}
+.faq .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px}
+details{background:#fff;border-radius:14px;margin-bottom:12px;border:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 22px;font:600 17px Outfit,sans-serif;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--cyan2);font-size:24px;line-height:1;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 22px 20px;color:var(--muted)}
+
+/* book */
+.book{background:linear-gradient(rgba(6,21,38,.9),rgba(6,21,38,.94)),url(img/kitchen-white.jpg) center/cover;color:#fff}
+.book .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.book .sec-h p{color:#b7c8da}
+.ci{display:grid;gap:14px;margin-top:10px}
+.ci a,.ci div{display:flex;gap:14px;align-items:center;font-size:17px}
+.ci .ic{margin:0}
+form{background:#fff;color:var(--ink);border-radius:22px;padding:32px;display:grid;gap:14px}
+form h3{font-size:24px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font:500 13px Inter,sans-serif;color:var(--muted);display:grid;gap:6px}
+input,select,textarea{font:16px Inter,sans-serif;padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;width:100%;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan)}
+form .btn{justify-content:center;width:100%}
+.ok{display:none;background:#e6f8ee;color:#16683b;border-radius:10px;padding:12px 14px;font-size:14px}
+
+/* footer */
+footer{background:#040e1a;color:#8ea3b8;padding:64px 0 28px;font-size:15px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;font:600 16px Outfit,sans-serif;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer a:hover{color:var(--cyan)}
+footer .logo img{height:64px;margin-bottom:14px}
+.fb{border-top:1px solid rgba(255,255,255,.08);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px}
+.fb a{color:#b7c8da}
+
+/* sticky mobile CTA */
+.mcta{display:none}
+.sm{display:none}
+
+/* coming soon page */
+#soon{display:none;min-height:min(100vh,900px);background:var(--navy);color:#fff;align-items:center;padding:120px 0 80px}
+#soon .box{max-width:640px}
+#soon h1{font-size:clamp(40px,6vw,64px);margin:16px 0}
+#soon p{color:#b7c8da;font-size:18px;margin-bottom:12px}
+#soon ul{list-style:none;margin:24px 0 34px;display:grid;gap:10px;color:#dbe7f3}
+#soon li::before{content:"→ ";color:var(--cyan)}
+body.soon main{display:none}
+body.soon #soon{display:flex}
+
+.rv-in{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.rv-in.on{opacity:1;transform:none}
+
+@media (max-width:980px){
+ .menu,.nav-r .tel{display:none}
+ .burger{display:block}
+ .mob{position:fixed;inset:78px 0 0;background:var(--navy);z-index:49;padding:20px;display:none;flex-direction:column;gap:4px;overflow:auto}
+ .mob.open{display:flex}
+ .mob a{color:#fff;font:600 20px Outfit,sans-serif;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.07)}
+ .mob a.sub{font-size:16px;font-weight:500;color:#a9bccf;padding-left:22px}
+ .svc,.rev,.chk{grid-template-columns:1fr 1fr}
+ .diff .grid,.vid,.story .grid,.faq .grid,.book .grid{grid-template-columns:1fr;gap:40px}
+ .badge-f{left:16px}
+ .fg{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+ section{padding:72px 0}
+ .nav .btn{display:none}
+ .nav .logo img{height:44px}
+ .hero{min-height:auto;padding:110px 0 56px}
+ .hero-bg{background-position:65% 30%}
+ .hero-bg::after{background:linear-gradient(180deg,rgba(6,21,38,.55) 0%,rgba(6,21,38,.88) 45%,rgba(6,21,38,.98) 100%)}
+ .hero .ctas{flex-direction:column}
+ .hero .ctas .btn{justify-content:center;white-space:nowrap}
+ .hm{display:none}
+ .sm{display:inline!important}
+ .pill{font-size:13px}
+ .trust{gap:14px 22px}
+ .trust .t span{font-size:13px}
+ .trust img{height:54px}
+ .svc,.rev,.chk,.feats,.row{grid-template-columns:1fr}
+ .gg{grid-template-columns:1fr 1fr;grid-template-rows:200px 140px 140px}
+ .gg img:first-child{grid-column:span 2;grid-row:auto}
+ .fg{grid-template-columns:1fr}
+ .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px}
+ .mcta a{flex:1;justify-content:center;padding:14px}
+ .mcta .btn-o{background:var(--navy);border-color:rgba(255,255,255,.2)}
+ footer{padding-bottom:96px}
+ form{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+ <div class="wrap nav">
+  <a href="#/" class="logo" aria-label="EDGE Cleaning Service home"><img src="img/logo.png" alt="EDGE Cleaning Service"></a>
+  <nav class="menu">
+   <a href="#/">Home</a>
+   <a href="#/about">About us</a>
+   <div class="dd"><a href="#/services">Services</a>
+    <div class="dd-m"><div>
+     <a href="#/residential">Residential Cleaning</a>
+     <a href="#/deep-cleaning">One-Time Deep Cleaning</a>
+     <a href="#/commercial">Commercial Cleaning</a>
+    </div></div>
+   </div>
+   <a href="#/reviews">Reviews</a>
+   <a href="#/faq">FAQ</a>
+   <a href="#/blog">Blog</a>
+   <a href="#/jobs">Jobs</a>
+  </nav>
+  <div class="nav-r">
+   <a class="tel" href="tel:+14258738592"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38c6f4" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(425) 873-8592</a>
+   <a class="btn btn-c" href="#book">Book now</a>
+   <button class="burger" id="bg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+ </div>
+</header>
+<div class="mob" id="mob">
+ <a href="#/">Home</a><a href="#/about">About us</a><a href="#/services">Services</a>
+ <a class="sub" href="#/residential">Residential Cleaning</a><a class="sub" href="#/deep-cleaning">One-Time Deep Cleaning</a><a class="sub" href="#/commercial">Commercial Cleaning</a>
+ <a href="#/reviews">Reviews</a><a href="#/faq">FAQ</a><a href="#/blog">Blog</a><a href="#/jobs">Jobs</a>
+ <a href="tel:+14258738592" style="color:var(--cyan)">Call (425) 873-8592</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-bg"></div>
+ <div class="wrap">
+  <div class="hero-c">
+   <span class="pill"><b>★&nbsp;4.8</b> Award-winning<span class="hm"> · Family-owned</span> · Renton, WA</span>
+   <h1>Pristine homes,<br><em>detailed</em> like never before.</h1>
+   <p class="lead">Family-owned, premium house cleaning and deep home detailing. Eco-friendly products, hypoallergenic vacuums and a team that cleans what others miss.</p>
+   <div class="ctas">
+    <a class="btn btn-c" href="#book">Get my free quote <span>→</span></a>
+    <a class="btn btn-o" href="tel:+14258738592"><span class="hm">Call (425) 873-8592</span><span class="sm">Call us now</span></a>
+   </div>
+   <div class="trust">
+    <div class="t"><div><span class="stars">★★★★★</span><strong>4.8 on Google</strong></div><span>80 reviews</span></div>
+    <div class="t"><div><strong>10+ years</strong><span>family-owned</span></div></div>
+    <img src="img/award.svg" alt="Best of Renton 2024 award">
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SOCIAL -->
+<div class="strip">
+ <div class="wrap">
+  <p><b>1.2M+</b> people watch us clean on social. Come see the details.</p>
+  <div class="soc">
+   <a href="https://instagram.com/edgecleaningwa" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></a>
+   <a href="https://tiktok.com/@edgecleaning" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2-2.8V9.2a6.3 6.3 0 1 0 5.4 6.2V8.6a8 8 0 0 0 4.6 1.5V6.7a4.6 4.6 0 0 1-4.6-4.7z"/></svg></a>
+   <a href="https://youtube.com/@EdgeCleaningClips" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg></a>
+   <a href="https://facebook.com/edgecleaningwa" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5V6.6c0-.9.2-1.4 1.6-1.4h1.8V2.1A24 24 0 0 0 14.8 2C12.2 2 10.5 3.6 10.5 6.4v2.1H7.6v3.3h2.9V22H14V11.8h2.9l.4-3.3H14z"/></svg></a>
+  </div>
+ </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+ <div class="wrap">
+  <div class="sec-h rv-in">
+   <span class="eyebrow">What we do</span>
+   <h2>Cleaning services built around your home</h2>
+   <p>From weekly upkeep to a top-to-bottom detail, every visit follows the same standard: meticulous, safe and on time.</p>
+  </div>
+  <div class="svc">
+   <a class="card rv-in" href="#/residential">
+    <div class="ph"><img src="img/kitchen-green.jpg" alt="Spotless modern kitchen cleaned by EDGE" loading="lazy"></div>
+    <div class="bd"><span class="tag">Weekly · Biweekly · Monthly</span><h3>Residential Cleaning</h3><p>Dusting, vacuuming, sanitizing, kitchens and bathrooms, plus window and pressure washing when you need it.</p><span class="more">Learn more →</span></div>
+   </a>
+   <a class="card rv-in" href="#/deep-cleaning">
+    <div class="ph"><img src="img/cabin-living.jpg" alt="Living room after a deep home detail" loading="lazy"></div>
+    <div class="bd"><span class="tag">Most popular</span><h3>One-Time Deep Cleaning</h3><p>Our home detailing service. Baseboards, blinds, light fixtures, inside the microwave: every item, every surface.</p><span class="more">See the full checklist →</span></div>
+   </a>
+   <a class="card rv-in" href="#/commercial">
+    <div class="ph"><img src="img/kitchen-white.jpg" alt="Clean commercial-grade kitchen" loading="lazy"></div>
+    <div class="bd"><span class="tag">Offices · Retail · Rentals</span><h3>Commercial Cleaning</h3><p>First impressions count. Flexible schedules to keep your workplace healthy for your team and your customers.</p><span class="more">Learn more →</span></div>
+   </a>
+  </div>
+ </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="diff">
+ <div class="wrap grid">
+  <div>
+   <div class="sec-h rv-in">
+    <span class="eyebrow">The EDGE difference</span>
+    <h2>Clean you can actually feel. Safe for kids and pets.</h2>
+    <p>We fell in love with the science of safe cleaning. That's why every home gets the same healthy, detail-obsessed process.</p>
+   </div>
+   <div class="feats">
+    <div class="feat rv-in"><div class="ic"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-10-1 12-5 16-9 16z"/><path d="M4 21c3-3 6-6 9-8"/></svg></div><h3>Eco-friendly products</h3><p>Free of harsh chemicals, safe for your family and pets.</p></div>
+    <div class="feat rv-in"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Hypoallergenic vacuums</h3><p>Professional HEPA-grade vacuums that trap allergens instead of spreading them.</p></div>
+    <div class="feat rv-in"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="16" rx="1"/><rect x="17" y="4" width="4" height="16" rx="1"/></svg></div><h3>Color-coded rag system</h3><p>Different cloths for kitchen, bath and living areas. No cross-contamination.</p></div>
+    <div class="feat rv-in"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 4l-9 9-3-3"/></svg></div><h3>Clear confirmations</h3><p>You always know who is coming and when. Simple, transparent, reliable.</p></div>
+   </div>
+  </div>
+  <div class="diff-ph rv-in">
+   <img src="img/oven.jpg" alt="EDGE team member detailing an oven" loading="lazy">
+   <div class="badge-f"><span class="n">4.8★</span><span>Rated by 80 neighbors<br>on Google</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- VIDEO -->
+<section>
+ <div class="wrap vid">
+  <div class="rv-in">
+   <span class="eyebrow">Meet EDGE</span>
+   <p class="quote">“What really lights us up is making life easier, cleaning what others miss, and building friendships based on trust along the way.”</p>
+   <p class="sig">The EDGE family, Renton, WA</p>
+   <div style="margin-top:28px"><a class="btn btn-c" href="#book">Book your cleaning</a></div>
+  </div>
+  <div class="yt rv-in" id="yt" style="background-image:url(https://i.ytimg.com/vi/E4j2K_-50XU/hqdefault.jpg)" role="button" aria-label="Play video: All about EDGE Cleaning Service">
+   <div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></div>
+  </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gal">
+ <div class="wrap">
+  <div class="sec-h rv-in">
+   <span class="eyebrow">Our work</span>
+   <h2>Real homes. Real results.</h2>
+   <p>No stock photos. These are the homes our team leaves PRISTINE every week.</p>
+  </div>
+  <div class="gg rv-in">
+   <img src="img/cabin-dining.jpg" alt="Dining room after cleaning" loading="lazy">
+   <img src="img/living-modern.jpg" alt="Modern living room" loading="lazy">
+   <img src="img/kitchen-white.jpg" alt="Bright kitchen after cleaning" loading="lazy">
+   <img src="img/sink.jpg" alt="Detailing a kitchen sink" loading="lazy">
+   <img src="img/kitchen-green.jpg" alt="Clean kitchen" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- CHECKLIST -->
+<section>
+ <div class="wrap">
+  <div class="sec-h rv-in">
+   <span class="eyebrow">Deep cleaning checklist</span>
+   <h2>Exactly what we clean. No surprises.</h2>
+  </div>
+  <div class="chk">
+   <div class="c rv-in"><h3>🛋️ Common areas</h3><ul><li>Cobwebs removed</li><li>Blinds, fixtures &amp; baseboards dusted</li><li>Windowsills &amp; handrails wiped</li><li>Carpets vacuumed, floors mopped</li><li>Beds made, pillows fluffed</li></ul></div>
+   <div class="c rv-in"><h3>🍳 Kitchen</h3><ul><li>Cabinets, fridge &amp; oven exterior</li><li>Microwave inside &amp; out</li><li>Stove top &amp; hood</li><li>Counters, sink &amp; backsplash</li><li>Small appliances wiped</li></ul></div>
+   <div class="c rv-in"><h3>🛁 Bathrooms</h3><ul><li>Toilet inside &amp; out</li><li>Shower &amp; tub scrubbed</li><li>Mirrors, sinks &amp; counters</li><li>Cabinets exterior</li><li>Floors vacuumed &amp; mopped</li></ul></div>
+   <div class="c rv-in"><h3>🧺 Laundry room</h3><ul><li>Washer &amp; dryer exterior</li><li>Counters, sink &amp; backsplash</li><li>Cabinets exterior</li><li>Floors vacuumed &amp; mopped</li><li>Trash taken out</li></ul></div>
+  </div>
+  <div class="chk-cta rv-in"><p>Add-ons: inside oven, inside cabinets, inside dishwasher, behind appliances, interior windows &amp; screens.</p><a href="#book">Ask for a custom quote →</a></div>
+ </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+ <div class="wrap grid">
+  <img class="rv-in" src="img/team.jpg" alt="The EDGE Cleaning team" loading="lazy">
+  <div class="rv-in">
+   <span class="eyebrow">Our story</span>
+   <h2 style="font-size:clamp(32px,4.4vw,46px);margin:10px 0 20px">From a family side hustle to an award-winning team.</h2>
+   <p>Ten years ago EDGE was a little family side hustle that helped us survive financially. Today, thanks to our amazing customers and hard work, EDGE provides for me, my mom and our wonderful team.</p>
+   <p>Our goal isn't just to clean. It's to free up your time so you can focus on what matters and come home to a place where you can truly relax.</p>
+   <div class="vals"><span>Customer obsession</span><span>Trust</span><span>Overcoming</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+ <div class="wrap">
+  <div class="sec-h rv-in">
+   <span class="eyebrow">Reviews</span>
+   <h2>Neighbors trust us with their homes</h2>
+  </div>
+  <div class="rev">
+   <div class="rv big rv-in">
+    <div><div class="src"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.5z"/></svg>Google reviews</div>
+     <div class="score" style="margin-top:18px">4.8</div><div class="stars">★★★★★</div></div>
+    <p>Based on 80 reviews from homeowners in Renton and the greater Seattle area.</p>
+    <a class="l" href="https://www.google.com/maps/place/EDGE+Cleaning+Service/@47.4889738,-122.1116893,10z/data=!4m18!1m9!3m8!1s0xed7e8c5841bb7df:0x5164aff3da806810!2sEDGE+Cleaning+Service!8m2!3d47.4889738!4d-122.1116893!9m1!1b1" target="_blank" rel="noopener">Read our Google reviews →</a>
+   </div>
+   <div class="rv rv-in">
+    <img class="aw" src="img/award.svg" alt="Best of Renton 2024">
+    <div><h3 style="font-size:21px;margin-bottom:6px">Best of Renton 2024</h3><p>Recognized among the top-rated cleaning companies in Renton.</p></div>
+   </div>
+   <div class="rv rv-in">
+    <div class="src" style="color:#ff5a3c">Angi</div>
+    <div><h3 style="font-size:21px;margin-bottom:6px">Video reviews from real clients</h3><p>See what our customers say on camera and on Angi.</p></div>
+    <a class="l" href="https://www.angi.com/companylist/us/wa/renton/edge-cleaning-service-reviews-9483314.htm" target="_blank" rel="noopener">Read our Angi reviews →</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+ <div class="wrap grid">
+  <div class="sec-h rv-in">
+   <span class="eyebrow">FAQ</span>
+   <h2>Questions? We've got answers.</h2>
+   <p>Still curious? Call us at <a href="tel:+14258738592" style="color:var(--cyan2);font-weight:600">(425) 873-8592</a>.</p>
+  </div>
+  <div class="rv-in">
+   <details open><summary>What services do you offer?</summary><p>Regular cleaning, deep cleaning, move-in/move-out, special occasion cleaning, fridge and oven cleaning, window cleaning, pressure washing, car detailing and more.</p></details>
+   <details><summary>Are your products safe for pets and children?</summary><p>Yes. We use eco-friendly, hypoallergenic products that are free of harmful chemicals.</p></details>
+   <details><summary>How do I schedule a cleaning?</summary><p>Fill out the form below or give us a call. We'll build the right cleaning plan for your home and pick a time that works for you.</p></details>
+   <details><summary>How can I pay?</summary><p>Cash, check and all major credit cards. We'll go over payment options when you book.</p></details>
+   <details><summary>Can I customize my cleaning?</summary><p>Absolutely. Every home is different, so we tailor every visit and happily take special requests.</p></details>
+  </div>
+ </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+ <div class="wrap grid">
+  <div>
+   <div class="sec-h rv-in">
+    <span class="eyebrow">Book now</span>
+    <h2>Come home to PRISTINE.</h2>
+    <p>Tell us about your home and we'll get back to you with a quote that fits it.</p>
+   </div>
+   <div class="ci rv-in">
+    <a href="tel:+14258738592"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>(425) 873-8592</a>
+    <a href="mailto:info@edgecleaningwa.com"><span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>info@edgecleaningwa.com</a>
+    <div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Monday – Friday, 8 AM – 5 PM</div>
+    <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Renton, WA · Serving the greater Seattle area</div>
+   </div>
+  </div>
+  <form id="fm" class="rv-in" onsubmit="event.preventDefault();document.getElementById('ok').style.display='block'">
+   <h3>Get your free quote</h3>
+   <div class="row"><label>Name<input required placeholder="Jane Smith"></label><label>Phone<input required type="tel" placeholder="(425) 555-0123"></label></div>
+   <label>Service<select><option>Residential cleaning</option><option>One-time deep cleaning</option><option>Move-in / move-out</option><option>Commercial cleaning</option><option>Something else</option></select></label>
+   <div class="row"><label>Bedrooms<select><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5+</option></select></label><label>Bathrooms<select><option>1</option><option selected>2</option><option>3</option><option>4+</option></select></label></div>
+   <label>Anything we should know?<textarea rows="3" placeholder="Pets, access, special requests…"></textarea></label>
+   <button class="btn btn-c" type="submit">Request my quote</button>
+   <div class="ok" id="ok">Demo: in the live site this goes straight to your inbox and phone.</div>
+  </form>
+ </div>
+</section>
+</main>
+
+<!-- COMING SOON (inner pages) -->
+<div id="soon">
+ <div class="wrap"><div class="box">
+  <span class="eyebrow" id="soon-t">About us</span>
+  <h1>This page is on its way.</h1>
+  <p>This is a preview of the new EDGE website. The homepage is ready to explore; the rest of the pages get built as soon as we start the project, using your own content, photos and videos.</p>
+  <ul><li>About us · Our story &amp; team</li><li>Service pages with full checklists</li><li>Reviews &amp; client videos</li><li>FAQ, Blog &amp; Jobs</li></ul>
+  <a class="btn btn-c" href="#/">← Back to the homepage</a>
+ </div></div>
+</div>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div><a href="#/" class="logo"><img src="img/logo.png" alt="EDGE Cleaning Service"></a><p>Award-winning, family-owned house cleaning and deep home detailing in Renton, WA.</p></div>
+   <div><h4>Services</h4><ul><li><a href="#/residential">Residential Cleaning</a></li><li><a href="#/deep-cleaning">Deep Cleaning</a></li><li><a href="#/commercial">Commercial Cleaning</a></li></ul></div>
+   <div><h4>Company</h4><ul><li><a href="#/about">About us</a></li><li><a href="#/reviews">Reviews</a></li><li><a href="#/faq">FAQ</a></li><li><a href="#/blog">Blog</a></li><li><a href="#/jobs">Jobs</a></li></ul></div>
+   <div><h4>Contact</h4><ul><li><a href="tel:+14258738592">(425) 873-8592</a></li><li><a href="mailto:info@edgecleaningwa.com">info@edgecleaningwa.com</a></li><li>Mon – Fri, 8 AM – 5 PM</li><li>Renton, WA</li></ul></div>
+  </div>
+  <div class="fb"><span>© 2025 EDGE Cleaning Service · Renton, WA</span><span>Website by <a href="https://jumalancers.com" target="_blank" rel="noopener">Jumalancers</a></span></div>
+ </div>
+</footer>
+
+<div class="mcta"><a class="btn btn-o" href="tel:+14258738592">Call</a><a class="btn btn-c" href="#book">Free quote</a></div>
+
+<script>
+const hd=document.getElementById('hd');
+const onS=()=>hd.classList.toggle('solid',scrollY>30||document.body.classList.contains('soon'));
+addEventListener('scroll',onS,{passive:true});onS();
+const mob=document.getElementById('mob');
+document.getElementById('bg').onclick=()=>mob.classList.toggle('open');
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
+const names={about:'About us',services:'Services',residential:'Residential Cleaning','deep-cleaning':'One-Time Deep Cleaning',commercial:'Commercial Cleaning',reviews:'Reviews',faq:'FAQ',blog:'Blog',jobs:'Jobs'};
+function route(){
+ const h=location.hash;
+ if(h.startsWith('#/')&&h.length>2){const k=h.slice(2);document.body.classList.add('soon');document.getElementById('soon-t').textContent=names[k]||'Coming soon';scrollTo(0,0)}
+ else{const was=document.body.classList.contains('soon');document.body.classList.remove('soon');if(h==='#/'||(was&&!h))scrollTo(0,0)}
+ onS();
+}
+addEventListener('hashchange',route);route();
+document.getElementById('yt').onclick=function(){if(this.querySelector('iframe'))return;this.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/E4j2K_-50XU?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="All about EDGE Cleaning Service"></iframe>'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv-in').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
