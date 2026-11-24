@@ -17,7 +17,7 @@ addEventListener('DOMContentLoaded', () => {
 
   /* inner pages not built yet */
   const names = { about: 'About us', services: 'Services', residential: 'Residential Cleaning', 'deep-cleaning': 'One-Time Deep Cleaning', commercial: 'Commercial Cleaning', reviews: 'Reviews', blog: 'Blog', jobs: 'Jobs', contact: 'Contact' };
-  const route = () => { const h = location.hash; if (h.startsWith('#/') && h.length > 2) { document.body.classList.add('soon'); $('#soonT').textContent = names[h.slice(2)] || 'Coming soon'; scrollTo(0, 0) } else document.body.classList.remove('soon'); onS() };
+  const route = () => { const h = location.hash; if (h.startsWith('#/') && h.length > 2) { document.body.classList.add('soon'); $('#soonT').textContent = names[h.slice(2)] || 'Coming soon'; scrollTo(0, 0) } else { const was = document.body.classList.contains('soon'); document.body.classList.remove('soon'); if (was) { const el = h.length > 1 && $(h); setTimeout(() => { if (window.lenis) lenis.resize(); if (window.ScrollTrigger) ScrollTrigger.refresh(); const y = el ? el.getBoundingClientRect().top + scrollY - 70 : 0; window.lenis ? lenis.scrollTo(Math.max(0, y), { immediate: true }) : scrollTo(0, Math.max(0, y)) }, 30) } } onS() };
   if ($('#soon')) { addEventListener('hashchange', route); route() }
 
   /* video modal: data-yt="ID", optional data-t="seconds", data-short for vertical */
@@ -69,7 +69,7 @@ addEventListener('DOMContentLoaded', () => {
     if (window.Lenis) {
       window.lenis = new Lenis({ duration: 1.1, smoothWheel: true });
       lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
-      $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.getAttribute('href'); if (h.length > 1 && !h.startsWith('#/') && $(h)) { e.preventDefault(); lenis.scrollTo(h, { offset: -70 }) } }));
+      $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.getAttribute('href'); if (document.body.classList.contains('soon')) return; if (h.length > 1 && !h.startsWith('#/') && $(h)) { e.preventDefault(); lenis.scrollTo(h, { offset: -70 }) } }));
     }
     gsap.to('.progress', { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: .3 } });
     if ($('.hero h1')) {
