@@ -9,6 +9,7 @@ addEventListener('DOMContentLoaded', () => {
     const past = !hero || scrollY > hero.offsetHeight - 90;
     hd.classList.toggle('solid', past && scrollY > 10 || (!hero && scrollY > 10));
     hd.classList.toggle('dark', !!hero && !past);
+    hd.classList.toggle('scrolled', scrollY > 10);
   };
   addEventListener('scroll', onS, { passive: true }); onS();
   const burger = $('#burger');
