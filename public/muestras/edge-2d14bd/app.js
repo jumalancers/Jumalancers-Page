@@ -16,7 +16,7 @@ addEventListener('DOMContentLoaded', () => {
   $$('.mnav a').forEach(a => a.addEventListener('click', () => { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false') }));
 
   /* inner pages not built yet */
-  const names = { about: 'About us', residential: 'Residential Cleaning', 'deep-cleaning': 'Deep Cleaning', commercial: 'Commercial Cleaning', reviews: 'Reviews', blog: 'Blog', jobs: 'Jobs' };
+  const names = { about: 'About us', services: 'Services', residential: 'Residential Cleaning', 'deep-cleaning': 'One-Time Deep Cleaning', commercial: 'Commercial Cleaning', reviews: 'Reviews', blog: 'Blog', jobs: 'Jobs', contact: 'Contact' };
   const route = () => { const h = location.hash; if (h.startsWith('#/') && h.length > 2) { document.body.classList.add('soon'); $('#soonT').textContent = names[h.slice(2)] || 'Coming soon'; scrollTo(0, 0) } else document.body.classList.remove('soon'); onS() };
   if ($('#soon')) { addEventListener('hashchange', route); route() }
 
