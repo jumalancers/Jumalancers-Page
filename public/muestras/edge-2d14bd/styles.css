@@ -367,11 +367,11 @@ body.soon .hd{color:var(--ink)}
 @media (max-width:1360px){.hd-r .tel{display:none}}
 @media (max-width:1080px){
  .nav,.hd-r .tel{display:none}.burger{display:flex}
- .rain-grid,.family,.eps,.qgrid{grid-template-columns:1fr}
+ .qgrid{grid-template-columns:1fr}
  .facts{grid-template-columns:1fr 1fr}
  .facts>div:nth-child(3){padding-left:0;border-left:0}
  .facts>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}
- .svc{grid-template-columns:1fr}.svc.rev .vis{order:0}
+
  .trow{grid-template-columns:1fr;gap:18px}
  .tq{grid-template-columns:1fr 1fr}
  .mgrid{grid-template-columns:1fr 1fr}
@@ -380,6 +380,12 @@ body.soon .hd{color:var(--ink)}
  .mi:nth-child(-n+2){border-top:0}
  .faqg{grid-template-columns:1fr}
  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+ .rain-grid,.family,.eps{grid-template-columns:1fr}
+ .svc{grid-template-columns:1fr}.svc.rev .vis{order:0}
+ .family .ph{aspect-ratio:4/3}
+ .svc .vis{aspect-ratio:16/10}
 }
 @media (max-width:720px){
  .hd .btn{display:none}.logo small{display:none}
