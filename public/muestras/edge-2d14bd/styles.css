@@ -388,9 +388,11 @@ body.soon .hd{color:var(--ink)}
  .svc .vis{aspect-ratio:16/10}
 }
 @media (max-width:720px){
- .hd .btn{display:none}.logo small{display:none}
+ .hd .btn{height:40px;padding:0 15px;font-size:14px;box-shadow:none}.hd .btn .ic{display:none}.logo small{display:none}
+ .hd .wrap{gap:10px}.hd-r{gap:8px}
+ .burger{width:42px;height:42px}
  .hero{min-height:auto}
- .hero .in{padding-top:120px;padding-bottom:96px}
+ .hero .in{padding-top:112px;padding-bottom:40px}
  .method-top{min-height:520px}
  .method-top .media::after{background:linear-gradient(180deg,rgba(6,16,26,.15) 0%,rgba(6,16,26,.88) 55%)}
  .hero .ctas .btn{flex:1}
@@ -413,8 +415,5 @@ body.soon .hd{color:var(--ink)}
  .row2{grid-template-columns:1fr}
  .cta{border-radius:26px}
  .f-grid{grid-template-columns:1fr}
- .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:58;gap:8px;padding:6px;border-radius:999px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px -8px rgba(11,27,43,.3);border:1px solid var(--line)}
- .mcta a{flex:1;height:50px}
- footer{padding-bottom:110px}
 }
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}.marq-t,.rcol{animation:none}.rain{overflow:auto}}
