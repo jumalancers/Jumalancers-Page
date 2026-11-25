@@ -12,24 +12,44 @@ import Faq from "./sections/Faq.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
 import BackgroundDots from "./components/BackgroundDots.jsx";
+import ServicePage from "./pages/ServicePage.jsx";
+import ProjectPage from "./pages/ProjectPage.jsx";
+import { useLang } from "./i18n.jsx";
+import { getPage } from "./routes.js";
+
+function Home() {
+  return (
+    <>
+      <Hero />
+      <ClientsStrip />
+      <Services />
+      <Portafolio />
+      <Process />
+      <WhyChooserUs />
+      <Testimonials />
+      <Plans />
+      <Quote />
+      <Faq />
+      <Contact />
+    </>
+  );
+}
 
 function App() {
+  const { page: key } = useLang();
+  const page = getPage(key);
   return (
     <>
       <BackgroundDots baseAlpha={0.04} hoverAlpha={0.2} spacing={24} />
       <Navbar />
       <main id="main">
-        <Hero />
-        <ClientsStrip />
-        <Services />
-        <Portafolio />
-        <Process />
-        <WhyChooserUs />
-        <Testimonials />
-        <Plans />
-        <Quote />
-        <Faq />
-        <Contact />
+        {page.type === "service" ? (
+          <ServicePage id={page.key} />
+        ) : page.type === "project" ? (
+          <ProjectPage id={page.id} />
+        ) : (
+          <Home />
+        )}
       </main>
       <Footer />
     </>

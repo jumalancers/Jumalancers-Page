@@ -7,13 +7,15 @@ import "./index.css";
 import App from "./App.jsx";
 import { LangProvider } from "./i18n.jsx";
 import { langFromPath } from "./seo.js";
+import { pageFromPath } from "./routes.js";
 
 const container = document.getElementById("root");
 const lang = langFromPath(window.location.pathname);
+const page = pageFromPath(window.location.pathname).key;
 
 const tree = (
   <StrictMode>
-    <LangProvider initialLang={lang}>
+    <LangProvider initialLang={lang} page={page}>
       <App />
     </LangProvider>
   </StrictMode>

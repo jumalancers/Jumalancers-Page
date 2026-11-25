@@ -9,6 +9,22 @@ Estudio de diseño y desarrollo web en Tijuana: diseño de páginas web, landing
 - [Inicio (español)](https://jumalancers.com/): Diseño de páginas web en Tijuana — servicios, portafolio, proceso, planes, cotizador y contacto.
 - [Home (English)](https://jumalancers.com/en/): Web design & development for small businesses — services, portfolio, process, pricing, quote tool and contact.
 
+## Service pages (same content in Spanish and English)
+
+- Websites / Páginas web: https://jumalancers.com/en/services/websites/ · https://jumalancers.com/servicios/paginas-web/
+- Landing pages: https://jumalancers.com/en/services/landing-pages/ · https://jumalancers.com/servicios/landing-pages/
+- Custom web apps / Sistemas web: https://jumalancers.com/en/services/web-apps/ · https://jumalancers.com/servicios/sistemas-web/
+- E-commerce / Tiendas en línea: https://jumalancers.com/en/services/ecommerce/ · https://jumalancers.com/servicios/tiendas-en-linea/
+- SEO: https://jumalancers.com/en/services/seo/ · https://jumalancers.com/servicios/seo/
+- Bilingual websites / Sitios bilingües: https://jumalancers.com/en/services/bilingual-websites/ · https://jumalancers.com/servicios/sitios-bilingues/
+
+## Case studies
+
+- JM & AN Abogados: https://jumalancers.com/en/projects/jm-an-abogados/
+- Jaka Express: https://jumalancers.com/en/projects/jaka-express/
+- Waldo Distribuciones: https://jumalancers.com/en/projects/waldo-distribuciones/
+- TodoMex Paquetería: https://jumalancers.com/en/projects/todomex-paqueteria/
+
 ## Services
 
 - Website design and development (custom design, mobile-first, fast, on-page SEO).

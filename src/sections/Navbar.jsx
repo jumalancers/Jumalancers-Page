@@ -116,7 +116,7 @@ function LangSwitch({ size = "sm", className = "inline-flex" }) {
 /* ---------- Navbar ---------- */
 
 export default function Navbar() {
-  const { t } = useLang();
+  const { t, homeHref } = useLang();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
@@ -251,7 +251,7 @@ export default function Navbar() {
         >
           {/* Marca */}
           <a
-            href="#hero"
+            href={homeHref("")}
             aria-label={t("nav.home")}
             className={`flex shrink-0 items-center gap-2 rounded-full pr-2 ${focusRing}`}
           >
@@ -289,7 +289,7 @@ export default function Navbar() {
                   <li key={l.id}>
                     <a
                       ref={(el) => (linkRefs.current[l.id] = el)}
-                      href={`#${l.id}`}
+                      href={homeHref(`#${l.id}`)}
                       aria-current={isActive ? "location" : undefined}
                       className={`relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-medium transition-colors ${focusRing} ${
                         isActive ? "text-text-900" : "text-text-500 hover:text-text-900"
@@ -319,7 +319,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#quote"
+              href={homeHref("#quote")}
               className={`group hidden h-10 items-center gap-1.5 rounded-full bg-primary-400 px-4 text-sm font-semibold text-[hsl(167,60%,6%)] shadow-[0_8px_24px_-8px] shadow-primary-400/60 transition hover:bg-primary-300 active:scale-[0.98] sm:inline-flex ${focusRing}`}
             >
               {t("nav.cta")}
@@ -359,7 +359,7 @@ export default function Navbar() {
           />
 
           <div className="relative flex h-16 shrink-0 items-center justify-between px-6 pt-3">
-            <a href="#hero" onClick={close} className={`flex items-center gap-2 rounded-full ${focusRing}`}>
+            <a href={homeHref("")} onClick={close} className={`flex items-center gap-2 rounded-full ${focusRing}`}>
               <img
                 src="/Logodark.png"
                 alt={t("nav.logoAlt")}
@@ -401,7 +401,7 @@ export default function Navbar() {
                     style={{ transitionDelay: open ? `${80 + i * 50}ms` : "0ms" }}
                   >
                     <a
-                      href={`#${l.id}`}
+                      href={homeHref(`#${l.id}`)}
                       onClick={close}
                       aria-current={isActive ? "location" : undefined}
                       className={`group flex items-baseline gap-4 py-4 font-display text-3xl font-semibold tracking-[-0.03em] transition-colors focus:outline-none focus-visible:text-primary-300 ${
@@ -428,7 +428,7 @@ export default function Navbar() {
           >
             <div className="grid grid-cols-2 gap-3">
               <a
-                href="#quote"
+                href={homeHref("#quote")}
                 onClick={close}
                 className={`group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary-400 font-semibold text-[hsl(167,60%,6%)] transition hover:bg-primary-300 ${focusRing}`}
               >

@@ -1,6 +1,6 @@
-// Prerender (SSG) de las rutas por idioma:
-//   dist/index.html     -> español  (/)
-//   dist/en/index.html  -> inglés   (/en/)
+// Prerender (SSG) de todas las páginas (src/routes.js) en cada idioma:
+//   dist/index.html, dist/servicios/.../index.html, dist/proyectos/.../index.html  -> español
+//   dist/en/index.html, dist/en/services/..., dist/en/projects/...                 -> inglés
 // Requiere haber corrido antes:  vite build  &&  vite build --ssr src/entry-server.jsx --outDir dist-ssr
 import fs from "node:fs";
 import path from "node:path";
@@ -39,16 +39,17 @@ try {
   fail("No se pudo cargar el bundle SSR (error al importar algún módulo en Node).", err);
 }
 
-const { render, LANGS, LANG_PATH } = mod;
+const { render, LANGS, PAGES } = mod;
 
-for (const lang of LANGS) {
+for (const pg of PAGES) for (const lang of LANGS) {
+  const tag = `${lang} ${pg[lang]}`;
   let out;
   try {
-    out = await render(lang);
+    out = await render(lang, pg.key);
   } catch (err) {
-    fail(`Falló el render SSR para "${lang}". Revisa el componente indicado en el stack.`, err);
+    fail(`Falló el render SSR para "${tag}". Revisa el componente indicado en el stack.`, err);
   }
-  if (!out.html || out.html.length < 500) fail(`El HTML renderizado para "${lang}" está vacío o es sospechosamente corto.`);
+  if (!out.html || out.html.length < 500) fail(`El HTML renderizado para "${tag}" está vacío o es sospechosamente corto.`);
 
   const page = template
     .replace(/<html lang="[^"]*"/, `<html lang="${out.htmlLang}"`)
@@ -56,7 +57,7 @@ for (const lang of LANGS) {
     .replace("<!--app-head-->", () => out.head)
     .replace("<!--app-html-->", () => out.html);
 
-  const rel = LANG_PATH[lang].replace(/^\//, "");
+  const rel = pg[lang].replace(/^\//, "");
   const file = path.join(dist, rel, "index.html");
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, page);
@@ -65,14 +66,32 @@ for (const lang of LANGS) {
   const h2 = (out.html.match(/<h2[\s>]/g) || []).length;
   const kb = (Buffer.byteLength(page) / 1024).toFixed(1);
   console.log(`[prerender] ${lang.padEnd(2)} -> ${path.relative(root, file)}  (${kb} KB, h1=${h1}, h2=${h2})`);
-  if (h1 !== 1) console.warn(`[prerender] Aviso: ${lang} tiene ${h1} <h1> (debería ser exactamente 1).`);
+  if (h1 !== 1) console.warn(`[prerender] Aviso: ${tag} tiene ${h1} <h1> (debería ser exactamente 1).`);
 }
 
-// lastmod del sitemap = fecha del build
-const sitemap = path.join(dist, "sitemap.xml");
-if (fs.existsSync(sitemap)) {
+// sitemap.xml generado desde PAGES (cada página en ambos idiomas, con hreflang)
+{
+  const BASE = "https://jumalancers.com";
   const today = new Date().toISOString().slice(0, 10);
-  fs.writeFileSync(sitemap, fs.readFileSync(sitemap, "utf8").replace(/<lastmod>[^<]*<\/lastmod>/g, `<lastmod>${today}</lastmod>`));
+  const alt = (pg) =>
+    [
+      ["es-MX", pg.es],
+      ["es", pg.es],
+      ["en", pg.en],
+      ["x-default", pg.es],
+    ]
+      .map(([hl, href]) => `    <xhtml:link rel="alternate" hreflang="${hl}" href="${BASE}${href}" />`)
+      .join("\n");
+  const urls = PAGES.flatMap((pg) =>
+    LANGS.map(
+      (lang) => `  <url>\n    <loc>${BASE}${pg[lang]}</loc>\n    <lastmod>${today}</lastmod>\n${alt(pg)}\n  </url>`
+    )
+  ).join("\n");
+  fs.writeFileSync(
+    path.join(dist, "sitemap.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`
+  );
+  console.log(`[prerender] sitemap.xml con ${PAGES.length * LANGS.length} URLs`);
 }
 
 // llms.txt: lista de clientes siempre sincronizada con src/data/projects.js

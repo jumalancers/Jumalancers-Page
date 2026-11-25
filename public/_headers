@@ -8,7 +8,11 @@
 # HTML: siempre revalidar (el contenido cambia en cada deploy)
 /
   Cache-Control: public, max-age=0, must-revalidate
-/en/
+/en/*
+  Cache-Control: public, max-age=0, must-revalidate
+/servicios/*
+  Cache-Control: public, max-age=0, must-revalidate
+/proyectos/*
   Cache-Control: public, max-age=0, must-revalidate
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

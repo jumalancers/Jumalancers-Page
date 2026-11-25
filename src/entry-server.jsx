@@ -12,7 +12,7 @@ import { headTags, HTML_LANG } from "./seo.js";
  * Usa renderToPipeableStream (onAllReady) para poder reportar el componentStack
  * exacto si alguna sección falla en SSR.
  */
-export function render(lang) {
+export function render(lang, page = "home") {
   return new Promise((resolve, reject) => {
     const errors = [];
     let html = "";
@@ -25,16 +25,16 @@ export function render(lang) {
     sink.on("finish", () => {
       if (errors.length) {
         const e = errors[0];
-        e.error.message = `[SSR ${lang}] ${e.error.message}\nComponent stack:${e.componentStack || " (n/d)"}`;
+        e.error.message = `[SSR ${lang} ${page}] ${e.error.message}\nComponent stack:${e.componentStack || " (n/d)"}`;
         reject(e.error);
       } else {
-        resolve({ html, head: headTags(lang), htmlLang: HTML_LANG[lang] });
+        resolve({ html, head: headTags(lang, page), htmlLang: HTML_LANG[lang] });
       }
     });
 
     const { pipe } = renderToPipeableStream(
       <StrictMode>
-        <LangProvider initialLang={lang}>
+        <LangProvider initialLang={lang} page={page}>
           <App />
         </LangProvider>
       </StrictMode>,
@@ -61,3 +61,4 @@ function withStack(error, componentStack, lang) {
 }
 
 export { LANGS, LANG_PATH } from "./seo.js";
+export { PAGES } from "./routes.js";

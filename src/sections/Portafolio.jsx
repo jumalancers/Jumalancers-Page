@@ -131,6 +131,7 @@ function ExternalLink({ href, label, srHint, className = "" }) {
 
 /* ---------- Destacado (grande) ---------- */
 function FeaturedProject({ project, index, onOpen, tx, t, altFor }) {
+  const { pageHref } = useLang();
   const reverse = index % 2 === 1;
   const features = tx(project.features) || [];
   return (
@@ -167,7 +168,12 @@ function FeaturedProject({ project, index, onOpen, tx, t, altFor }) {
           ) : null}
         </div>
         <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.03em] text-text-900 sm:text-3xl">
-          {project.name}
+          <a
+            href={pageHref(`project-${project.id}`)}
+            className="rounded decoration-primary-400/50 underline-offset-4 transition hover:text-primary-200 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+          >
+            {project.name}
+          </a>
         </h3>
         <p className="mt-3 text-[15px] leading-relaxed text-text-500 text-pretty">{tx(project.summary)}</p>
 
@@ -193,6 +199,13 @@ function FeaturedProject({ project, index, onOpen, tx, t, altFor }) {
             <Plus className="h-4 w-4" aria-hidden="true" />
             {t("portfolio.viewCase")}
           </Button>
+          <a
+            href={pageHref(`project-${project.id}`)}
+            className="inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-300 transition hover:text-primary-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+          >
+            {t("portfolio.fullCase")}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
           <ExternalLink href={project.url} label={t("portfolio.viewSite")} srHint={`${project.name} ${t("portfolio.opensNewTab")}`} />
         </div>
       </div>
@@ -261,6 +274,7 @@ function ProjectCard({ project, onOpen, tx, t, altFor, wide = false }) {
 
 /* ---------- Modal de detalle ---------- */
 function ProjectModal({ project, onClose, onPrev, onNext, tx, t, altFor }) {
+  const { pageHref } = useLang();
   const dialogRef = useRef(null);
   const closeRef = useRef(null);
   const titleId = `pf-modal-title-${project.id}`;
@@ -434,6 +448,9 @@ function ProjectModal({ project, onClose, onPrev, onNext, tx, t, altFor }) {
                   {t("portfolio.modal.visit")}
                   <span className="sr-only"> {project.name} {t("portfolio.opensNewTab")}</span>
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </Button>
+                <Button href={pageHref(`project-${project.id}`)} variant="secondary" size="md" className="w-full" arrow>
+                  {t("portfolio.fullCase")}
                 </Button>
                 <Button href="#quote" variant="secondary" size="md" className="w-full" onClick={onClose} arrow>
                   {t("portfolio.modal.startSimilar")}

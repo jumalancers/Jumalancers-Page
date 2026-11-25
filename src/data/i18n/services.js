@@ -6,6 +6,7 @@ export default {
     accent: "quieren crecer",
     desc: "Páginas web, landing pages y sistemas a medida para negocios en México y EE. UU. Rápidos, en el idioma de tus clientes y listos para que Google te encuentre.",
     includes: "Incluye",
+    more: "Ver más",
     items: {
       corporate: {
         tag: "Más solicitado",
@@ -100,6 +101,7 @@ export default {
     accent: "want to grow",
     desc: "Websites, landing pages and custom web apps for small businesses in the US and Mexico. Fast, in your customers' language and built to get found on Google.",
     includes: "Includes",
+    more: "Learn more",
     items: {
       corporate: {
         tag: "Most popular",

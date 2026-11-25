@@ -2,6 +2,9 @@
 // Lo usan el prerender (scripts/prerender.mjs vía entry-server) y el cliente
 // (i18n.jsx actualiza title/description al cambiar de idioma sin recargar).
 import { SITE } from "./data/site.js";
+import { getPage, pathOf } from "./routes.js";
+import { SERVICES as SERVICE_PAGES, PAGE_UI, PROJECT_SERVICE } from "./data/pages/services.js";
+import { PROJECTS } from "./data/projects.js";
 
 export const BASE_URL = "https://jumalancers.com";
 export const LANGS = ["es", "en"];
@@ -16,10 +19,10 @@ export function langFromPath(pathname = "/") {
 
 export const META = {
   es: {
-    title: "Diseño de páginas web en Tijuana | Jumalancers",
+    title: "Diseño de páginas web en Tijuana para México y EE. UU. | Jumalancers",
     description:
-      "Diseño de páginas web en Tijuana y desarrollo web para negocios en México y EE. UU.: sitios rápidos, bilingües y sistemas web a medida. Cotiza gratis.",
-    ogTitle: "Jumalancers | Diseño y desarrollo web en Tijuana",
+      "Estudio de diseño web en Tijuana: páginas web rápidas, landing pages y sistemas a medida para negocios en México y EE. UU., en español, inglés o bilingües. Precio fijo en USD.",
+    ogTitle: "Jumalancers | Diseño de páginas web en Tijuana para México y EE. UU.",
     ogDescription:
       "Páginas web rápidas, landing pages y sistemas web a medida para negocios en México y EE. UU. En español, inglés o bilingües, con precio fijo en USD.",
     ogImage: "/og-image.jpg",
@@ -27,17 +30,54 @@ export const META = {
       "Jumalancers, estudio de diseño web en Tijuana, con capturas de sitios web de clientes",
   },
   en: {
-    title: "Web Design for Small Businesses | Jumalancers",
+    title: "Website Design in Tijuana for the US & Mexico | Jumalancers",
     description:
-      "Website design for small businesses: fast, SEO-ready English or bilingual sites and custom web apps. Fixed USD pricing, Pacific Time. Free quote.",
-    ogTitle: "Jumalancers | Web Design for Small Businesses",
+      "Web design studio in Tijuana: fast websites, landing pages and custom web apps for businesses in the US and Mexico, in English, Spanish or bilingual. Fixed USD pricing.",
+    ogTitle: "Jumalancers | Website Design in Tijuana for the US & Mexico",
     ogDescription:
-      "Fast, SEO-ready websites and custom web apps for small businesses in the US and Mexico. English or bilingual, fixed USD pricing, on Pacific Time.",
+      "Fast websites, landing pages and custom web apps for businesses in the US and Mexico. In English, Spanish or bilingual, with fixed USD pricing.",
     ogImage: "/og-image-en.jpg",
     ogImageAlt:
-      "Jumalancers web design studio, with screenshots of client websites",
+      "Jumalancers web design studio in Tijuana, with screenshots of client websites",
   },
 };
+
+const PROJECT_TITLES = {
+  jmyan: { es: "JM & AN Abogados: página web bilingüe para despacho legal", en: "JM & AN Abogados: bilingual website for a law firm" },
+  jaka: { es: "Jaka Express: página web para empresa de logística en Tijuana", en: "Jaka Express: website for a cross-border logistics company" },
+  waldo: { es: "Waldo Distribuciones: catálogo en línea y sistema web a medida", en: "Waldo Distribuciones: online catalog and custom web app" },
+  todomex: { es: "TodoMex Paquetería: página web con formulario de envíos", en: "TodoMex Paquetería: website with a shipping request form" },
+};
+
+const clip = (t, n = 158) => (t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n - 1)).replace(/[,;:]$/, "") + "…");
+
+/** title/description/og de cualquier página en un idioma. */
+export function metaFor(lang, key = "home") {
+  const page = getPage(key);
+  const base = META[lang];
+  const url = BASE_URL + page[lang];
+  if (page.type === "service") {
+    const c = SERVICE_PAGES[key][lang];
+    return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
+  }
+  if (page.type === "project") {
+    const p = PROJECTS.find((x) => x.id === page.id);
+    const title = `${PROJECT_TITLES[p.id]?.[lang] ?? p.name} | Jumalancers`;
+    const description = clip(p.summary[lang]);
+    return {
+      ...base,
+      title,
+      description,
+      ogTitle: title,
+      ogDescription: description,
+      ogImage: `/work/${p.id}-desktop.webp`,
+      ogImageAlt: `${p.name} — ${PAGE_UI[lang].desktop}`,
+      ogImageType: "image/webp",
+      url,
+    };
+  }
+  return { ...base, url };
+}
 
 const SERVICES = {
   es: [
@@ -65,9 +105,14 @@ const esc = (s) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-export function jsonLd(lang) {
-  const m = META[lang];
-  const url = BASE_URL + LANG_PATH[lang];
+// Página de servicio de cada oferta del catálogo (mismo orden que SERVICES).
+const OFFER_PAGES = ["websites", "landing", "systems", "ecommerce", "seo"];
+
+export function jsonLd(lang, key = "home") {
+  const m = metaFor(lang, key);
+  const home = META[lang];
+  const url = m.url;
+  const page = getPage(key);
   const orgId = `${BASE_URL}/#organization`;
   const businessId = `${BASE_URL}/#business`;
   const websiteId = `${BASE_URL}/#website`;
@@ -109,9 +154,9 @@ export function jsonLd(lang) {
         "@id": businessId,
         name: "Jumalancers",
         alternateName: "JM Web Studio",
-        description: m.description,
+        description: home.description,
         url: `${BASE_URL}/`,
-        image: `${BASE_URL}${m.ogImage}`,
+        image: `${BASE_URL}${home.ogImage}`,
         logo: { "@id": `${BASE_URL}/#logo` },
         parentOrganization: { "@id": orgId },
         email: SITE.email,
@@ -138,7 +183,13 @@ export function jsonLd(lang) {
           itemListElement: SERVICES[lang].map(([name, description], i) => ({
             "@type": "Offer",
             position: i + 1,
-            itemOffered: { "@type": "Service", name, description, provider: { "@id": businessId } },
+            itemOffered: {
+              "@type": "Service",
+              name,
+              description,
+              provider: { "@id": businessId },
+              ...(OFFER_PAGES[i] ? { url: BASE_URL + pathOf(OFFER_PAGES[i], lang) } : {}),
+            },
           })),
         },
       },
@@ -160,29 +211,97 @@ export function jsonLd(lang) {
         inLanguage: HTML_LANG[lang],
         isPartOf: { "@id": websiteId },
         about: { "@id": businessId },
-        primaryImageOfPage: { "@type": "ImageObject", url: `${BASE_URL}${m.ogImage}`, width: 1200, height: 630 },
+        primaryImageOfPage: { "@type": "ImageObject", url: `${BASE_URL}${m.ogImage}` },
+        ...(page.type !== "home" ? { breadcrumb: { "@id": `${url}#breadcrumb` } } : {}),
       },
+      ...pageNodes(lang, page, url, businessId),
     ],
   };
 }
 
+/** Nodos extra de las páginas internas: migas, servicio o caso, y FAQ. */
+function pageNodes(lang, page, url, businessId) {
+  if (page.type === "home") return [];
+  const ui = PAGE_UI[lang];
+  const homeUrl = BASE_URL + LANG_PATH[lang];
+  const nodes = [];
+  if (page.type === "service") {
+    const c = SERVICE_PAGES[page.key][lang];
+    const name = `${c.h1} ${c.accent}`.replace(/,\s*$/, "");
+    nodes.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: ui.home, item: homeUrl },
+        { "@type": "ListItem", position: 2, name: ui.services, item: `${homeUrl}#services` },
+        { "@type": "ListItem", position: 3, name: c.eyebrow, item: url },
+      ],
+    });
+    nodes.push({
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name,
+      serviceType: c.eyebrow,
+      description: c.metaDesc,
+      url,
+      provider: { "@id": businessId },
+      areaServed: [
+        { "@type": "Country", name: "México", identifier: "MX" },
+        { "@type": "Country", name: "United States", identifier: "US" },
+      ],
+      availableLanguage: ["Spanish", "English"],
+    });
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: c.faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+    });
+  }
+  if (page.type === "project") {
+    const p = PROJECTS.find((x) => x.id === page.id);
+    nodes.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: ui.home, item: homeUrl },
+        { "@type": "ListItem", position: 2, name: ui.projects, item: `${homeUrl}#portfolio` },
+        { "@type": "ListItem", position: 3, name: p.name, item: url },
+      ],
+    });
+    nodes.push({
+      "@type": "CreativeWork",
+      "@id": `${url}#work`,
+      name: p.name,
+      description: p.summary[lang],
+      url: p.url,
+      dateCreated: String(p.year),
+      creator: { "@id": businessId },
+      image: `${BASE_URL}/work/${p.id}-desktop.webp`,
+      about: SERVICE_PAGES[PROJECT_SERVICE[p.id]] ? { "@id": `${BASE_URL}${pathOf(PROJECT_SERVICE[p.id], lang)}#service` } : undefined,
+    });
+  }
+  return nodes;
+}
+
 /** Etiquetas <head> específicas del idioma (se inyectan en el prerender). */
-export function headTags(lang) {
-  const m = META[lang];
-  const url = BASE_URL + LANG_PATH[lang];
+export function headTags(lang, key = "home") {
+  const m = metaFor(lang, key);
+  const page = getPage(key);
+  const url = m.url;
   const other = lang === "es" ? "en" : "es";
   const img = BASE_URL + m.ogImage;
-  const ld = JSON.stringify(jsonLd(lang)).replace(/</g, "\\u003c");
+  const isPhoto = !m.ogImageType;
+  const ld = JSON.stringify(jsonLd(lang, key)).replace(/</g, "\\u003c");
   return [
     `<title>${esc(m.title)}</title>`,
     `<meta name="description" content="${esc(m.description)}" />`,
     `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />`,
     `<link rel="canonical" href="${url}" />`,
-    `<link rel="alternate" hreflang="es-MX" href="${BASE_URL}/" />`,
-    `<link rel="alternate" hreflang="es" href="${BASE_URL}/" />`,
-    `<link rel="alternate" hreflang="en" href="${BASE_URL}/en/" />`,
-    `<link rel="alternate" hreflang="x-default" href="${BASE_URL}/" />`,
-    `<meta property="og:type" content="website" />`,
+    `<link rel="alternate" hreflang="es-MX" href="${BASE_URL}${page.es}" />`,
+    `<link rel="alternate" hreflang="es" href="${BASE_URL}${page.es}" />`,
+    `<link rel="alternate" hreflang="en" href="${BASE_URL}${page.en}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${BASE_URL}${page.es}" />`,
+    `<meta property="og:type" content="${page.type === "home" ? "website" : "article"}" />`,
     `<meta property="og:site_name" content="Jumalancers" />`,
     `<meta property="og:locale" content="${OG_LOCALE[lang]}" />`,
     `<meta property="og:locale:alternate" content="${OG_LOCALE[other]}" />`,
@@ -190,9 +309,13 @@ export function headTags(lang) {
     `<meta property="og:title" content="${esc(m.ogTitle)}" />`,
     `<meta property="og:description" content="${esc(m.ogDescription)}" />`,
     `<meta property="og:image" content="${img}" />`,
-    `<meta property="og:image:type" content="image/jpeg" />`,
-    `<meta property="og:image:width" content="1200" />`,
-    `<meta property="og:image:height" content="630" />`,
+    ...(isPhoto
+      ? [
+          `<meta property="og:image:type" content="image/jpeg" />`,
+          `<meta property="og:image:width" content="1200" />`,
+          `<meta property="og:image:height" content="630" />`,
+        ]
+      : [`<meta property="og:image:type" content="${m.ogImageType}" />`]),
     `<meta property="og:image:alt" content="${esc(m.ogImageAlt)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${esc(m.ogTitle)}" />`,

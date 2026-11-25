@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   Building2,
   Check,
   Gauge,
@@ -33,7 +34,37 @@ function Card({ className = "", delay = 0, children }) {
   );
 }
 
-function CardHead({ icon, tag, title, desc }) {
+// Título de la tarjeta = enlace a la página del servicio (/servicios/...).
+function CardTitle({ title, href }) {
+  return (
+    <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.02em] text-text-900 text-balance sm:text-[1.35rem]">
+      {href ? (
+        <a
+          href={href}
+          className="rounded decoration-primary-400/50 underline-offset-4 transition hover:text-primary-200 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+        >
+          {title}
+        </a>
+      ) : (
+        title
+      )}
+    </h3>
+  );
+}
+
+function MoreLink({ href, label }) {
+  return (
+    <a
+      href={href}
+      className="mt-3 inline-flex w-fit items-center gap-1.5 rounded text-sm font-semibold text-primary-300 transition hover:text-primary-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+    >
+      {label}
+      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+    </a>
+  );
+}
+
+function CardHead({ icon, tag, title, desc, href, more }) {
   return (
     <>
       <div className="flex items-center justify-between gap-3">
@@ -46,10 +77,9 @@ function CardHead({ icon, tag, title, desc }) {
           </span>
         )}
       </div>
-      <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.02em] text-text-900 text-balance sm:text-[1.35rem]">
-        {title}
-      </h3>
+      <CardTitle title={title} href={href} />
       <p className="mt-2 text-[15px] leading-relaxed text-text-500 text-pretty">{desc}</p>
+      {href && more && <MoreLink href={href} label={more} />}
     </>
   );
 }
@@ -184,7 +214,8 @@ function Ring({ value, label }) {
 /* ---------- sección ---------- */
 
 export default function Services() {
-  const { t } = useLang();
+  const { t, pageHref } = useLang();
+  const more = t("services.more");
   const it = t("services.items");
   const inc = t("services.includes");
 
@@ -208,7 +239,7 @@ export default function Services() {
         <Card className="md:col-span-2 lg:col-span-4">
           <div className="grid h-full gap-6 lg:grid-cols-[1fr_1.1fr]">
             <div>
-              <CardHead icon={<Building2 className="h-5 w-5" aria-hidden="true" />} tag={it.corporate.tag} title={it.corporate.title} desc={it.corporate.desc} />
+              <CardHead icon={<Building2 className="h-5 w-5" aria-hidden="true" />} tag={it.corporate.tag} title={it.corporate.title} desc={it.corporate.desc} href={pageHref("websites")} more={more} />
               <Bullets items={it.corporate.bullets} label={inc} />
             </div>
             <div className="relative lg:self-center">
@@ -231,7 +262,7 @@ export default function Services() {
 
         {/* 2. Landing pages */}
         <Card className="lg:col-span-2" delay={80}>
-          <CardHead icon={<MousePointerClick className="h-5 w-5" aria-hidden="true" />} title={it.landing.title} desc={it.landing.desc} />
+          <CardHead icon={<MousePointerClick className="h-5 w-5" aria-hidden="true" />} title={it.landing.title} desc={it.landing.desc} href={pageHref("landing")} more={more} />
           <Bullets items={it.landing.bullets} label={inc} />
           <div className="mt-auto">
             <LandingMock s={it.landing} />
@@ -240,7 +271,7 @@ export default function Services() {
 
         {/* 3. Sistemas a medida */}
         <Card className="lg:col-span-3">
-          <CardHead icon={<LayoutDashboard className="h-5 w-5" aria-hidden="true" />} tag={it.systems.tag} title={it.systems.title} desc={it.systems.desc} />
+          <CardHead icon={<LayoutDashboard className="h-5 w-5" aria-hidden="true" />} tag={it.systems.tag} title={it.systems.title} desc={it.systems.desc} href={pageHref("systems")} more={more} />
           <Bullets items={it.systems.bullets} label={inc} />
           <div className="mt-auto">
             <DashboardMock s={it.systems} />
@@ -262,7 +293,7 @@ export default function Services() {
 
         {/* 4. E-commerce */}
         <Card className="lg:col-span-3" delay={80}>
-          <CardHead icon={<ShoppingBag className="h-5 w-5" aria-hidden="true" />} title={it.ecommerce.title} desc={it.ecommerce.desc} />
+          <CardHead icon={<ShoppingBag className="h-5 w-5" aria-hidden="true" />} title={it.ecommerce.title} desc={it.ecommerce.desc} href={pageHref("ecommerce")} more={more} />
           <Bullets items={it.ecommerce.bullets} label={inc} />
           <div className="mt-auto pt-6">
             <BrowserShot id="waldo" alt={it.ecommerce.visualAlt} caption={it.ecommerce.visualCaption} />
@@ -271,7 +302,7 @@ export default function Services() {
 
         {/* 5. SEO técnico */}
         <Card className="lg:col-span-2">
-          <CardHead icon={<Gauge className="h-5 w-5" aria-hidden="true" />} title={it.seo.title} desc={it.seo.desc} />
+          <CardHead icon={<Gauge className="h-5 w-5" aria-hidden="true" />} title={it.seo.title} desc={it.seo.desc} href={pageHref("seo")} more={more} />
           <Bullets items={it.seo.bullets} label={inc} />
           <div className="mt-auto pt-6">
             <div className="rounded-xl border border-white/10 bg-bg-50/60 p-4">
@@ -320,10 +351,9 @@ export default function Services() {
               {it.languages.tag}
             </span>
           </div>
-          <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.02em] text-text-900 text-balance sm:text-[1.35rem]">
-            {it.languages.title}
-          </h3>
+          <CardTitle title={it.languages.title} href={pageHref("bilingual")} />
           <p className="mt-2 text-[15px] leading-relaxed text-text-500 text-pretty">{it.languages.desc}</p>
+          <MoreLink href={pageHref("bilingual")} label={more} />
           <ul className="mt-5 flex flex-wrap gap-2">
             {it.languages.list.map((lng) => (
               <li

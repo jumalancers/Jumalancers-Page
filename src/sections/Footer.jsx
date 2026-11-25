@@ -2,6 +2,8 @@ import { Instagram, Facebook, Mail, MapPin, ArrowUpRight, ArrowRight, ArrowUp } 
 import { useLang } from "../i18n.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { SITE, waLink } from "../data/site.js";
+import { SERVICES as SERVICE_PAGES } from "../data/pages/services.js";
+import { SERVICE_KEYS } from "../routes.js";
 
 // Mismos enlaces y textos que el Navbar (nav.*)
 const NAV_LINKS = [
@@ -28,7 +30,7 @@ const ringOffset =
   "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-50";
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, lang, isHome, homeHref, pageHref } = useLang();
   const year = new Date().getFullYear();
   const wa = waLink(t("footer.waMessage"));
   const services = t("footer.services");
@@ -73,7 +75,7 @@ export default function Footer() {
               </p>
               <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
                 <a
-                  href="#quote"
+                  href={homeHref("#quote")}
                   className={`group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary-400 px-5 py-3 text-center font-semibold leading-tight sm:px-7 text-[hsl(167,60%,6%)] shadow-[0_8px_30px_-8px] shadow-primary-400/50 transition hover:bg-primary-300 active:scale-[0.98] ${ringOffset}`}
                 >
                   {t("footer.ctaQuote")}
@@ -97,7 +99,7 @@ export default function Footer() {
         <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-12 lg:mt-24 lg:grid-cols-12 lg:gap-x-8">
           {/* Marca */}
           <div className="col-span-2 lg:col-span-4">
-            <a href="#hero" className={`inline-flex items-center gap-2.5 rounded-full pr-2 ${ringOffset}`}>
+            <a href={homeHref("")} className={`inline-flex items-center gap-2.5 rounded-full pr-2 ${ringOffset}`}>
               <img
                 src="/Logodark.png"
                 alt={t("nav.logoAlt")}
@@ -141,7 +143,7 @@ export default function Footer() {
             <ul className="mt-3 text-sm sm:mt-5 sm:space-y-3">
               {NAV_LINKS.map((l) => (
                 <li key={l.id}>
-                  <a href={`#${l.id}`} className={linkCls}>
+                  <a href={homeHref(`#${l.id}`)} className={linkCls}>
                     {t(l.key)}
                     <ArrowUpRight className="h-3.5 w-3.5 -translate-x-1 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
                   </a>
@@ -154,14 +156,20 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h3 className={colTitle}>{t("footer.servicesTitle")}</h3>
             <ul className="mt-3 text-sm sm:mt-5 sm:space-y-3">
-              {Array.isArray(services) &&
-                services.map((s) => (
-                  <li key={s}>
-                    <a href="#services" className={linkCls}>
-                      {s}
-                    </a>
-                  </li>
-                ))}
+              {SERVICE_KEYS.map((k) => (
+                <li key={k}>
+                  <a href={pageHref(k)} className={linkCls}>
+                    {SERVICE_PAGES[k][lang].eyebrow}
+                  </a>
+                </li>
+              ))}
+              {Array.isArray(services) && services.at(-1) && (
+                <li>
+                  <a href={homeHref("#plans")} className={linkCls}>
+                    {services.at(-1)}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -196,7 +204,7 @@ export default function Footer() {
           <div className="flex items-center justify-between gap-5 sm:justify-start">
             <p className="text-text-300">{t("footer.madeIn")}</p>
             <a
-              href="#hero"
+              href={isHome ? "#hero" : "#main"}
               className={`inline-flex min-h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 px-3.5 py-1.5 text-text-700 sm:min-h-0 transition hover:border-white/20 hover:text-text-900 ${ringOffset}`}
             >
               <ArrowUp className="h-3.5 w-3.5" />
