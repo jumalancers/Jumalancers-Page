@@ -9,7 +9,7 @@ const copy = {
   es: { eyebrow: "Estudio de desarrollo web · Tijuana", h1a: "Sitios web que convierten", h1b: "visitas", h1c: "en clientes", sub: "Diseño de páginas web y sistemas a medida para negocios en México y EE. UU.", foot: "México · Estados Unidos" },
   en: { eyebrow: "Web design & development studio", h1a: "Websites that turn", h1b: "visitors", h1c: "into customers", sub: "Websites and custom web apps for small businesses in Mexico and the US.", foot: "USA · Mexico" },
 };
-const shots = ["waldo", "jmyan", "todomex", "jaka"];
+const shots = ["waldo", "jmyan", "jaka"];
 for (const [lang, c] of Object.entries(copy)) {
   const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:Geist;src:url(file://${P}/node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2) format("woff2");font-weight:100 900}
@@ -45,10 +45,9 @@ p{margin-top:22px;font-size:22px;line-height:1.4;color:hsl(37 35% 76%);max-width
 </div>
 <div class="stack">
 ${[
-  [shots[3], 150, -40, 4],
-  [shots[2], 40, 360, -3],
-  [shots[1], 210, 330, 3],
-  [shots[0], 30, 120, -2],
+  [shots[2], 150, -30, 4],
+  [shots[1], 120, 340, -3],
+  [shots[0], 30, 130, -2],
 ].map(([id, x, y, r]) => `<div class="win" style="left:${x}px;top:${y}px;transform:rotate(${r}deg)"><div class="bar"><span></span><span></span><span></span></div><img src="file://${P}/public/work/${id}-desktop-720.webp"></div>`).join("")}
 </div></body></html>`;
   fs.writeFileSync(`${S}/og-${lang}.html`, html);

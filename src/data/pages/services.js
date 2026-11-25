@@ -125,7 +125,7 @@ export const SERVICES = {
 
   landing: {
     icon: "MousePointerClick",
-    project: "todomex",
+    project: "jaka",
     es: {
       metaTitle: "Landing pages para campañas de Google y Meta | Jumalancers",
       metaDesc:
@@ -167,7 +167,7 @@ export const SERVICES = {
       ],
       price:
         "La landing page es el plan Starter: $599 USD, precio fijo, con dominio, hosting y SSL del primer año. Renovación desde el segundo año: $99 USD al año con 2 cambios incluidos.",
-      projectNote: "Sitio de paquetería con un formulario de envío por pasos y contacto directo por WhatsApp.",
+      projectNote: "Sitio para una empresa de importación y exportación que lleva al visitante directo a pedir su cotización, con un formulario que llega por correo.",
       faqs: [
         {
           q: "¿Qué diferencia hay entre una landing page y una página web?",
@@ -224,7 +224,7 @@ export const SERVICES = {
       ],
       price:
         "A landing page is the Starter plan: $599 USD, fixed price, with domain, hosting and SSL for the first year. Renewal from the second year: $99 USD a year with 2 updates included.",
-      projectNote: "Parcel delivery website with a step-by-step shipping form and direct WhatsApp contact.",
+      projectNote: "Website for an import/export company that takes visitors straight to a quote request, with a form delivered by email.",
       faqs: [
         {
           q: "What's the difference between a landing page and a website?",
@@ -813,4 +813,4 @@ export const PAGE_UI = {
 };
 
 // Servicio relacionado de cada proyecto (para enlazar casos ↔ servicios).
-export const PROJECT_SERVICE = { jmyan: "bilingual", jaka: "websites", waldo: "systems", todomex: "landing" };
+export const PROJECT_SERVICE = { jmyan: "bilingual", jaka: "websites", waldo: "systems" };

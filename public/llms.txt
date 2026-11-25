@@ -23,7 +23,6 @@ Estudio de diseño y desarrollo web en Tijuana: diseño de páginas web, landing
 - JM & AN Abogados: https://jumalancers.com/en/projects/jm-an-abogados/
 - Jaka Express: https://jumalancers.com/en/projects/jaka-express/
 - Waldo Distribuciones: https://jumalancers.com/en/projects/waldo-distribuciones/
-- TodoMex Paquetería: https://jumalancers.com/en/projects/todomex-paqueteria/
 
 ## Services
 
@@ -50,7 +49,6 @@ Estudio de diseño y desarrollo web en Tijuana: diseño de páginas web, landing
 - [JM & AN Abogados](https://jmyanabogados.com): Law firm — Tijuana, BC (Mexico)
 - [Jaka Express](https://www.jakaexpress.com): Cross-border logistics — Tijuana, BC (Mexico)
 - [Waldo Distribuciones](https://waldodistribuciones.com): Distributor + quoting catalog — Tijuana, BC (Mexico)
-- [TodoMex Paquetería](https://todomexpaqueteria.com): Parcel delivery — Tijuana, BC (Mexico)
 <!-- clients:end -->
 
 ## Contact

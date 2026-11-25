@@ -47,7 +47,6 @@ const PROJECT_TITLES = {
   jmyan: { es: "JM & AN Abogados: página web bilingüe para despacho legal", en: "JM & AN Abogados: bilingual website for a law firm" },
   jaka: { es: "Jaka Express: página web para empresa de logística en Tijuana", en: "Jaka Express: website for a cross-border logistics company" },
   waldo: { es: "Waldo Distribuciones: catálogo en línea y sistema web a medida", en: "Waldo Distribuciones: online catalog and custom web app" },
-  todomex: { es: "TodoMex Paquetería: página web con formulario de envíos", en: "TodoMex Paquetería: website with a shipping request form" },
 };
 
 const clip = (t, n = 158) => (t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n - 1)).replace(/[,;:]$/, "") + "…");

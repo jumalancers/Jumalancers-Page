@@ -17,7 +17,6 @@ export const PROJECT_SLUGS = {
   jmyan: "jm-an-abogados",
   jaka: "jaka-express",
   waldo: "waldo-distribuciones",
-  todomex: "todomex-paqueteria",
 };
 
 export const PAGES = [

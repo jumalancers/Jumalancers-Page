@@ -152,34 +152,7 @@ export const PROJECTS = [
       en: ["Product catalog with categories and search", "Protected admin dashboard", "Quotes, orders and inventory", "Clients, suppliers and expenses", "Barcode labels and order tracking"],
     },
   },
-  {
-    id: "todomex",
-    name: "TodoMex Paquetería",
-    url: "https://todomexpaqueteria.com",
-    market: "mx",
-    industry: { es: "Paquetería nacional", en: "Parcel delivery" },
-    location: "Tijuana, BC",
-    featured: true,
-    kind: "site",
-    stack: ["HTML", "Tailwind CSS", "JavaScript", "EmailJS"],
-    year: 2025,
-    before: {
-      es: "No tenían página web.",
-      en: "They didn't have a website.",
-    },
-    result: {
-      es: "Desde que tienen su página, más clientes los contactan directamente desde el sitio y por correo.",
-      en: "Since the website launched, more customers contact them directly through the site and by email.",
-    },
-    summary: {
-      es: "Sitio corporativo para una paquetería con envíos a todo México, con un cotizador por pasos para que el cliente solicite su envío en segundos.",
-      en: "Corporate website for a parcel company shipping across Mexico, with a step-by-step quote form so customers can request a shipment in seconds.",
-    },
-    features: {
-      es: ["Formulario de envío por pasos", "Contacto directo por WhatsApp", "Servicios de paquetería explicados", "Diseño responsivo"],
-      en: ["Step-by-step shipping form", "Direct WhatsApp contact", "Clear breakdown of shipping services", "Responsive design"],
-    },
-  },
+
 ];
 
 export const shot = (id, variant = "desktop") => `/work/${id}-${variant}.webp`;
