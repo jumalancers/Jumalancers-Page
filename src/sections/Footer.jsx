@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { id: "process", key: "nav.process" },
   { id: "plans", key: "nav.plans" },
   { id: "faq", key: "nav.faq" },
+  { id: "blog", key: "nav.blog", page: "blog" },
   { id: "quote", key: "nav.cta" },
 ];
 
@@ -144,7 +145,7 @@ export default function Footer() {
             <ul className="mt-3 text-sm sm:mt-5 sm:space-y-3">
               {NAV_LINKS.map((l) => (
                 <li key={l.id}>
-                  <a href={homeHref(`#${l.id}`)} className={linkCls}>
+                  <a href={l.page ? pageHref(l.page) : homeHref(`#${l.id}`)} className={linkCls}>
                     {t(l.key)}
                     <ArrowUpRight className="h-3.5 w-3.5 -translate-x-1 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
                   </a>

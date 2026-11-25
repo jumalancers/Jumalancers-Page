@@ -15,6 +15,7 @@ import BackgroundDots from "./components/BackgroundDots.jsx";
 import ServicePage from "./pages/ServicePage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
 import ProcessPage from "./pages/ProcessPage.jsx";
+import { BlogIndex, BlogPost } from "./pages/BlogPages.jsx";
 import { useLang } from "./i18n.jsx";
 import { getPage } from "./routes.js";
 
@@ -50,6 +51,10 @@ function App() {
           <ProjectPage id={page.id} />
         ) : page.type === "process" ? (
           <ProcessPage />
+        ) : page.type === "blog" ? (
+          <BlogIndex />
+        ) : page.type === "post" ? (
+          <BlogPost id={page.id} />
         ) : (
           <Home />
         )}

@@ -6,6 +6,7 @@ import { getPage, pathOf } from "./routes.js";
 import { SERVICES as SERVICE_PAGES, PAGE_UI, PROJECT_SERVICE } from "./data/pages/services.js";
 import { PROJECTS } from "./data/projects.js";
 import { PROCESS_PAGE } from "./data/pages/process.js";
+import { POSTS, BLOG_UI } from "./data/blog/posts.js";
 
 export const BASE_URL = "https://jumalancers.com";
 export const LANGS = ["es", "en"];
@@ -59,6 +60,15 @@ export function metaFor(lang, key = "home") {
   if (page.type === "service") {
     const c = SERVICE_PAGES[key][lang];
     return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
+  }
+  if (page.type === "blog") {
+    const b = BLOG_UI[lang];
+    return { ...base, title: b.metaTitle, description: b.metaDesc, ogTitle: b.metaTitle, ogDescription: b.metaDesc, url };
+  }
+  if (page.type === "post") {
+    const c = POSTS.find((x) => x.id === page.id)[lang];
+    const title = `${c.title} | Jumalancers`;
+    return { ...base, title, description: c.metaDesc, ogTitle: c.title, ogDescription: c.metaDesc, url };
   }
   if (page.type === "process") {
     const c = PROCESS_PAGE[lang];
@@ -261,6 +271,45 @@ function pageNodes(lang, page, url, businessId) {
       mainEntity: c.faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
     });
   }
+  if (page.type === "blog" || page.type === "post") {
+    const b = BLOG_UI[lang];
+    const blogUrl = BASE_URL + pathOf("blog", lang);
+    const items = [
+      { "@type": "ListItem", position: 1, name: ui.home, item: homeUrl },
+      { "@type": "ListItem", position: 2, name: b.eyebrow, item: blogUrl },
+    ];
+    if (page.type === "post") {
+      const post = POSTS.find((x) => x.id === page.id);
+      const c = post[lang];
+      items.push({ "@type": "ListItem", position: 3, name: c.title, item: url });
+      nodes.push({
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: c.title,
+        description: c.metaDesc,
+        url,
+        mainEntityOfPage: { "@id": `${url}#webpage` },
+        datePublished: post.date,
+        dateModified: post.updated || post.date,
+        inLanguage: HTML_LANG[lang],
+        author: { "@id": `${BASE_URL}/#organization` },
+        publisher: { "@id": `${BASE_URL}/#organization` },
+        image: `${BASE_URL}${META[lang].ogImage}`,
+        isPartOf: { "@id": `${blogUrl}#blog` },
+      });
+    } else {
+      nodes.push({
+        "@type": "Blog",
+        "@id": `${url}#blog`,
+        name: `${b.eyebrow} · Jumalancers`,
+        url,
+        inLanguage: HTML_LANG[lang],
+        publisher: { "@id": `${BASE_URL}/#organization` },
+        blogPost: POSTS.map((p) => ({ "@type": "BlogPosting", headline: p[lang].title, url: BASE_URL + pathOf(`post-${p.id}`, lang), datePublished: p.date })),
+      });
+    }
+    nodes.push({ "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: items });
+  }
   if (page.type === "process") {
     const c = PROCESS_PAGE[lang];
     nodes.push({
@@ -322,6 +371,7 @@ export function headTags(lang, key = "home") {
     `<link rel="alternate" hreflang="en" href="${BASE_URL}${page.en}" />`,
     `<link rel="alternate" hreflang="x-default" href="${BASE_URL}${page.es}" />`,
     `<meta property="og:type" content="${page.type === "home" ? "website" : "article"}" />`,
+    ...(page.type === "post" ? [`<meta property="article:published_time" content="${POSTS.find((x) => x.id === page.id).date}" />`] : []),
     `<meta property="og:site_name" content="Jumalancers" />`,
     `<meta property="og:locale" content="${OG_LOCALE[lang]}" />`,
     `<meta property="og:locale:alternate" content="${OG_LOCALE[other]}" />`,

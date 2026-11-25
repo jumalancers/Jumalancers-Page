@@ -1,6 +1,7 @@
 // Páginas del sitio (fuente única de rutas). Cada página existe en español e inglés
 // con el mismo contenido; el prerender genera un index.html por ruta.
 import { PROJECTS } from "./data/projects.js";
+import { POSTS } from "./data/blog/posts.js";
 
 export const SERVICE_KEYS = ["websites", "landing", "systems", "ecommerce", "seo", "bilingual"];
 
@@ -23,6 +24,8 @@ export const PAGES = [
   { key: "home", type: "home", es: "/", en: "/en/" },
   ...SERVICE_KEYS.map((k) => ({ key: k, type: "service", ...SERVICE_PATHS[k] })),
   { key: "process", type: "process", es: "/proceso/", en: "/en/process/" },
+  { key: "blog", type: "blog", es: "/blog/", en: "/en/blog/" },
+  ...POSTS.map((p) => ({ key: `post-${p.id}`, type: "post", id: p.id, es: `/blog/${p.es.slug}/`, en: `/en/blog/${p.en.slug}/` })),
   ...PROJECTS.filter((p) => PROJECT_SLUGS[p.id]).map((p) => ({
     key: `project-${p.id}`,
     type: "project",

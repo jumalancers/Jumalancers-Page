@@ -12,6 +12,7 @@ const LINKS = [
   { id: "process", key: "nav.process" },
   { id: "plans", key: "nav.plans" },
   { id: "faq", key: "nav.faq" },
+  { id: "blog", key: "nav.blog", page: "blog" },
 ];
 
 // Todas las secciones que observa el scroll-spy (incluye las que no están en el menú
@@ -292,7 +293,7 @@ export default function Navbar() {
                   <li key={l.id} className={hasMenu ? "group/dd relative" : undefined}>
                     <a
                       ref={(el) => (linkRefs.current[l.id] = el)}
-                      href={homeHref(`#${l.id}`)}
+                      href={l.page ? pageHref(l.page) : homeHref(`#${l.id}`)}
                       aria-current={isActive ? "location" : undefined}
                       className={`relative inline-flex h-9 items-center gap-1 rounded-full px-3.5 text-sm font-medium transition-colors ${focusRing} ${
                         isActive ? "text-text-900" : "text-text-500 hover:text-text-900"
@@ -435,7 +436,7 @@ export default function Navbar() {
                     style={{ transitionDelay: open ? `${80 + i * 50}ms` : "0ms" }}
                   >
                     <a
-                      href={homeHref(`#${l.id}`)}
+                      href={l.page ? pageHref(l.page) : homeHref(`#${l.id}`)}
                       onClick={close}
                       aria-current={isActive ? "location" : undefined}
                       className={`group flex items-baseline gap-4 py-4 font-display text-3xl font-semibold tracking-[-0.03em] transition-colors focus:outline-none focus-visible:text-primary-300 ${
