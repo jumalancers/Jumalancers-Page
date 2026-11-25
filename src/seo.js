@@ -6,7 +6,7 @@ import { getPage, pathOf } from "./routes.js";
 import { SERVICES as SERVICE_PAGES, PAGE_UI, PROJECT_SERVICE } from "./data/pages/services.js";
 import { PROJECTS } from "./data/projects.js";
 import { PROCESS_PAGE } from "./data/pages/process.js";
-import { POSTS, BLOG_UI } from "./data/blog/posts.js";
+import { POSTS, BLOG_UI, blogCover } from "./data/blog/posts.js";
 
 export const BASE_URL = "https://jumalancers.com";
 export const LANGS = ["es", "en"];
@@ -72,7 +72,16 @@ export function metaFor(lang, key = "home") {
   if (page.type === "post") {
     const c = POSTS.find((x) => x.id === page.id)[lang];
     const title = `${c.title} | Jumalancers`;
-    return { ...base, title, description: c.metaDesc, ogTitle: c.title, ogDescription: c.metaDesc, url };
+    return {
+      ...base,
+      title,
+      description: c.metaDesc,
+      ogTitle: c.title,
+      ogDescription: c.metaDesc,
+      ogImage: blogCover(page.id, lang, "jpg"),
+      ogImageAlt: c.title,
+      url,
+    };
   }
   if (page.type === "process") {
     const c = PROCESS_PAGE[lang];
@@ -298,7 +307,7 @@ function pageNodes(lang, page, url, businessId) {
         inLanguage: HTML_LANG[lang],
         author: { "@id": `${BASE_URL}/#organization` },
         publisher: { "@id": `${BASE_URL}/#organization` },
-        image: `${BASE_URL}${META[lang].ogImage}`,
+        image: { "@type": "ImageObject", url: `${BASE_URL}${blogCover(post.id, lang, "jpg")}`, width: 1200, height: 630 },
         isPartOf: { "@id": `${blogUrl}#blog` },
       });
     } else {

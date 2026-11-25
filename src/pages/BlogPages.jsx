@@ -1,6 +1,6 @@
 import { ArrowRight, CalendarDays } from "lucide-react";
 import Reveal from "../components/Reveal.jsx";
-import { POSTS, BLOG_UI } from "../data/blog/posts.js";
+import { POSTS, BLOG_UI, blogCover } from "../data/blog/posts.js";
 import { SERVICES, PAGE_UI } from "../data/pages/services.js";
 import { useLang } from "../i18n.jsx";
 import { PageHero, CheckList } from "./shared.jsx";
@@ -20,8 +20,20 @@ function PostCard({ post }) {
   return (
     <a
       href={pageHref(`post-${post.id}`)}
-      className="group card flex h-full flex-col p-6 transition hover:border-primary-400/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 sm:p-7"
+      className="group card flex h-full flex-col overflow-hidden transition hover:border-primary-400/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
     >
+      <div className="aspect-[1200/630] overflow-hidden border-b border-white/[0.08]">
+        <img
+          src={blogCover(post.id, lang)}
+          alt=""
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02] motion-reduce:transition-none"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-6 sm:p-7">
       <time dateTime={post.date} className="inline-flex items-center gap-1.5 text-xs text-text-500">
         <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
         {fmtDate(post.date, lang)}
@@ -32,6 +44,7 @@ function PostCard({ post }) {
         {b.read}
         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
       </span>
+      </div>
     </a>
   );
 }
@@ -132,6 +145,17 @@ export function BlogPost({ id }) {
                   {b.published} {fmtDate(post.date, lang)}
                 </time>
               </p>
+              <div className="card mt-8 overflow-hidden">
+                <img
+                  src={blogCover(post.id, lang)}
+                  alt={c.title}
+                  width="1200"
+                  height="630"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="block h-auto w-full"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -294,6 +294,9 @@ export const POSTS = [
   },
 ];
 
+// Portada de cada artículo: public/covers/<id>-<lang>.{webp,jpg} (scripts/blog-covers.mjs).
+export const blogCover = (id, lang, ext = "webp") => `/covers/${id}-${lang}.${ext}`;
+
 export const BLOG_UI = {
   es: {
     eyebrow: "Blog",

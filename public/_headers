@@ -30,6 +30,8 @@
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 /portfolio/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/covers/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 /mockups/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 /*.png
