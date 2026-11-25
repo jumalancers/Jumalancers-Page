@@ -10,8 +10,9 @@ import { langFromPath } from "./seo.js";
 import { pageFromPath } from "./routes.js";
 
 const container = document.getElementById("root");
-const lang = langFromPath(window.location.pathname);
 const page = pageFromPath(window.location.pathname).key;
+// La 404 se prerenderiza en español: se hidrata igual para no desajustar el HTML.
+const lang = page === "notfound" ? "es" : langFromPath(window.location.pathname);
 
 const tree = (
   <StrictMode>

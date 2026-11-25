@@ -35,7 +35,10 @@ export const PAGES = [
   })),
 ];
 
-const BY_KEY = Object.fromEntries(PAGES.map((p) => [p.key, p]));
+// Página 404 (fuera del sitemap). El prerender la escribe en dist/404.html.
+export const NOT_FOUND = { key: "notfound", type: "notfound", es: "/404/", en: "/en/404/" };
+
+const BY_KEY = Object.fromEntries([...PAGES, NOT_FOUND].map((p) => [p.key, p]));
 
 export const getPage = (key) => BY_KEY[key] || BY_KEY.home;
 
@@ -47,8 +50,8 @@ const norm = (p = "/") => {
   return clean.endsWith("/") ? clean : clean + "/";
 };
 
-/** Página a partir de un pathname (cualquier idioma). Desconocida => inicio. */
+/** Página a partir de un pathname (cualquier idioma). Desconocida => 404. */
 export function pageFromPath(pathname = "/") {
   const p = norm(pathname);
-  return PAGES.find((pg) => pg.es === p || pg.en === p) || BY_KEY.home;
+  return PAGES.find((pg) => pg.es === p || pg.en === p) || NOT_FOUND;
 }

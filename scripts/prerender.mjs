@@ -69,6 +69,19 @@ for (const pg of PAGES) for (const lang of LANGS) {
   if (h1 !== 1) console.warn(`[prerender] Aviso: ${tag} tiene ${h1} <h1> (debería ser exactamente 1).`);
 }
 
+// 404.html: Cloudflare Pages lo sirve con estado 404 en rutas que no existen
+// (sin él, devuelve el inicio con 200 y Google lo trata como "soft 404").
+{
+  const out = await render("es", "notfound");
+  const page = template
+    .replace(/<html lang="[^"]*"/, `<html lang="${out.htmlLang}"`)
+    .replace("<!--app-preload-->", () => preload)
+    .replace("<!--app-head-->", () => out.head)
+    .replace("<!--app-html-->", () => out.html);
+  fs.writeFileSync(path.join(dist, "404.html"), page);
+  console.log("[prerender] 404.html");
+}
+
 // sitemap.xml generado desde PAGES (cada página en ambos idiomas, con hreflang)
 {
   const BASE = "https://jumalancers.com";

@@ -61,6 +61,10 @@ export function metaFor(lang, key = "home") {
     const c = SERVICE_PAGES[key][lang];
     return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
   }
+  if (page.type === "notfound") {
+    const title = lang === "es" ? "Página no encontrada | Jumalancers" : "Page not found | Jumalancers";
+    return { ...base, title, ogTitle: title, url: BASE_URL + pathOf("home", lang), noindex: true };
+  }
   if (page.type === "blog") {
     const b = BLOG_UI[lang];
     return { ...base, title: b.metaTitle, description: b.metaDesc, ogTitle: b.metaTitle, ogDescription: b.metaDesc, url };
@@ -364,7 +368,9 @@ export function headTags(lang, key = "home") {
   return [
     `<title>${esc(m.title)}</title>`,
     `<meta name="description" content="${esc(m.description)}" />`,
-    `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />`,
+    m.noindex
+      ? `<meta name="robots" content="noindex,follow" />`
+      : `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />`,
     `<link rel="canonical" href="${url}" />`,
     `<link rel="alternate" hreflang="es-MX" href="${BASE_URL}${page.es}" />`,
     `<link rel="alternate" hreflang="es" href="${BASE_URL}${page.es}" />`,
