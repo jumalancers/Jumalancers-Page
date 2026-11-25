@@ -28,7 +28,7 @@ export default {
       title: "Qué pasa después de escribirnos",
       steps: [
         { title: "Te respondemos", desc: "En menos de 24 h, con preguntas puntuales sobre tu negocio." },
-        { title: "Llamada breve", desc: "15–20 minutos para entender objetivos, alcance y tiempos." },
+        { title: "Objetivos y alcance", desc: "Revisamos tus objetivos, el alcance y los tiempos por WhatsApp o correo." },
         { title: "Propuesta clara", desc: "Precio cerrado, entregables y fecha de entrega por escrito." },
       ],
     },

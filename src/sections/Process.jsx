@@ -9,7 +9,7 @@ import { Section, SectionHeader, Button } from "../components/ui/index.jsx";
  * vertical a la derecha con una línea de progreso que se llena al hacer scroll.
  */
 export default function Process() {
-  const { t } = useLang();
+  const { t, pageHref } = useLang();
   const steps = t("process.steps");
   const listRef = useRef(null);
   const fillRef = useRef(null);
@@ -90,6 +90,12 @@ export default function Process() {
                 {t("process.cta")}
               </Button>
               <span className="text-xs text-text-300">{t("process.ctaNote")}</span>
+              <a
+                href={pageHref("process")}
+                className="inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-300 transition hover:text-primary-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+              >
+                {t("process.more")} →
+              </a>
             </Reveal>
           </div>
         </div>
@@ -168,6 +174,12 @@ export default function Process() {
               {t("process.cta")}
             </Button>
             <span className="text-[13px] text-text-300">{t("process.ctaNote")}</span>
+            <a
+              href={pageHref("process")}
+              className="inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-300 transition hover:text-primary-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+            >
+              {t("process.more")} →
+            </a>
           </div>
         </div>
       </div>

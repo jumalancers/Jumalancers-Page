@@ -23,6 +23,7 @@ export const PROJECT_SLUGS = {
 export const PAGES = [
   { key: "home", type: "home", es: "/", en: "/en/" },
   ...SERVICE_KEYS.map((k) => ({ key: k, type: "service", ...SERVICE_PATHS[k] })),
+  { key: "process", type: "process", es: "/proceso/", en: "/en/process/" },
   ...PROJECTS.filter((p) => PROJECT_SLUGS[p.id]).map((p) => ({
     key: `project-${p.id}`,
     type: "project",

@@ -5,6 +5,7 @@ import { SITE } from "./data/site.js";
 import { getPage, pathOf } from "./routes.js";
 import { SERVICES as SERVICE_PAGES, PAGE_UI, PROJECT_SERVICE } from "./data/pages/services.js";
 import { PROJECTS } from "./data/projects.js";
+import { PROCESS_PAGE } from "./data/pages/process.js";
 
 export const BASE_URL = "https://jumalancers.com";
 export const LANGS = ["es", "en"];
@@ -58,6 +59,10 @@ export function metaFor(lang, key = "home") {
   const url = BASE_URL + page[lang];
   if (page.type === "service") {
     const c = SERVICE_PAGES[key][lang];
+    return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
+  }
+  if (page.type === "process") {
+    const c = PROCESS_PAGE[lang];
     return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
   }
   if (page.type === "project") {
@@ -250,6 +255,22 @@ function pageNodes(lang, page, url, businessId) {
         { "@type": "Country", name: "United States", identifier: "US" },
       ],
       availableLanguage: ["Spanish", "English"],
+    });
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: c.faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+    });
+  }
+  if (page.type === "process") {
+    const c = PROCESS_PAGE[lang];
+    nodes.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: ui.home, item: homeUrl },
+        { "@type": "ListItem", position: 2, name: c.eyebrow, item: url },
+      ],
     });
     nodes.push({
       "@type": "FAQPage",

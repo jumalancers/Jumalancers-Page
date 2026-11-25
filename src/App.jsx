@@ -14,6 +14,7 @@ import Footer from "./sections/Footer.jsx";
 import BackgroundDots from "./components/BackgroundDots.jsx";
 import ServicePage from "./pages/ServicePage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
+import ProcessPage from "./pages/ProcessPage.jsx";
 import { useLang } from "./i18n.jsx";
 import { getPage } from "./routes.js";
 
@@ -47,6 +48,8 @@ function App() {
           <ServicePage id={page.key} />
         ) : page.type === "project" ? (
           <ProjectPage id={page.id} />
+        ) : page.type === "process" ? (
+          <ProcessPage />
         ) : (
           <Home />
         )}

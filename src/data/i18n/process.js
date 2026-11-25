@@ -12,8 +12,8 @@ export default {
     steps: [
       {
         when: "Día 1",
-        title: "Llamada de descubrimiento",
-        desc: "Una llamada breve para entender tu negocio, tus servicios y el cliente que quieres atraer.",
+        title: "Conocer tu negocio",
+        desc: "Platicamos de tu negocio, tus servicios y el cliente que quieres atraer, todo por WhatsApp o correo.",
         bullets: ["Objetivos y cliente ideal", "Mensaje y tono", "Logo, colores, fotos y testimonios"],
       },
       {
@@ -42,6 +42,7 @@ export default {
       },
     ],
     cta: "Iniciar mi proyecto",
+    more: "Ver el proceso completo",
     ctaNote: "Sin compromiso · Respuesta en menos de 24 h",
   },
   en: {
@@ -86,6 +87,7 @@ export default {
       },
     ],
     cta: "Start my project",
+    more: "See the full process",
     ctaNote: "No commitment · Reply within 24 hours",
   },
 };

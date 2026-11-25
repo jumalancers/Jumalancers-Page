@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal.jsx";
 import { SITE, waLink } from "../data/site.js";
 import { SERVICES as SERVICE_PAGES } from "../data/pages/services.js";
 import { SERVICE_KEYS } from "../routes.js";
+import { PROCESS_PAGE } from "../data/pages/process.js";
 
 // Mismos enlaces y textos que el Navbar (nav.*)
 const NAV_LINKS = [
@@ -163,6 +164,11 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href={pageHref("process")} className={linkCls}>
+                  {PROCESS_PAGE[lang].eyebrow}
+                </a>
+              </li>
               {Array.isArray(services) && services.at(-1) && (
                 <li>
                   <a href={homeHref("#plans")} className={linkCls}>
