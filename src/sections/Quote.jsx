@@ -33,6 +33,7 @@ import { useLang } from "../i18n.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { Section, SectionHeader } from "../components/ui/index.jsx";
 import { waLink } from "../data/site.js";
+import { track } from "../analytics.js";
 import {
   ADVANCED_SYSTEM_KEY,
   DEFAULT_ANSWERS,
@@ -419,6 +420,7 @@ export default function InstantQuoteSection() {
     try {
       const doc = await makeDoc();
       setPdfUrl(URL.createObjectURL(doc.output("blob")));
+      track("quote_pdf", { action: "preview" });
     } catch {
       setPdfError(true);
     } finally {
@@ -431,6 +433,7 @@ export default function InstantQuoteSection() {
     try {
       const doc = await makeDoc();
       doc.save("jumalancers-instant-quote.pdf");
+      track("quote_pdf", { action: "download" });
     } catch {
       setPdfError(true);
     } finally {

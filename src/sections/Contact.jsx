@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AlertCircle, ArrowRight, ArrowUpRight, CheckCircle2, Clock, Lock, Mail, MapPin, Send } from "lucide-react";
 import { useLang } from "../i18n.jsx";
+import { track } from "../analytics.js";
 import Reveal from "../components/Reveal.jsx";
 import { Section, SectionHeader } from "../components/ui/index.jsx";
 import { SITE, waLink } from "../data/site.js";
@@ -224,6 +225,7 @@ export default function ContactSection() {
         budget: form.budget ? `${t(`contact.form.budgets.${form.budget}`)} USD` : "—",
       };
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, PUBLIC_KEY);
+      track("generate_lead", { form: "contact", project_type: form.type || "none", budget: form.budget || "none" });
       setSentTo({ name, email });
       setForm(EMPTY);
       setErrors({});

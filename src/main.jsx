@@ -8,6 +8,7 @@ import App from "./App.jsx";
 import { LangProvider } from "./i18n.jsx";
 import { langFromPath } from "./seo.js";
 import { pageFromPath } from "./routes.js";
+import { trackContactClicks } from "./analytics.js";
 
 const container = document.getElementById("root");
 const page = pageFromPath(window.location.pathname).key;
@@ -37,3 +38,6 @@ if (container.firstElementChild) {
 
 // Marca para el script inline de index.html (fallback de [data-reveal] si el JS falla).
 window.__jmHydrated = true;
+
+// Analytics: clics en WhatsApp y correo (eventos clave en GA4).
+trackContactClicks();
