@@ -78,12 +78,33 @@ export default function ProjectPage({ id }) {
       <section className="pb-16 sm:pb-24">
         <div className="container-x grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
           <div className="flex flex-col gap-12">
+            {p.before && (
+              <Reveal as="article">
+                <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-text-900 sm:text-3xl">{ui.before}</h2>
+                <p className="mt-4 text-base leading-relaxed text-text-500 text-pretty sm:text-[17px]">{p.before[lang]}</p>
+              </Reveal>
+            )}
+
             <Reveal as="article">
-              <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-text-900 sm:text-3xl">{ui.features}</h2>
-              <div className="mt-6">
+              <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-text-900 sm:text-3xl">{ui.built}</h2>
+              <p className="mt-4 text-base leading-relaxed text-text-500 text-pretty sm:text-[17px]">{p.summary[lang]}</p>
+              {p.built && (
+                <div className="mt-6">
+                  <CheckList items={p.built[lang]} />
+                </div>
+              )}
+              <h3 className="mt-10 font-display text-lg font-semibold tracking-tight text-text-900">{ui.features}</h3>
+              <div className="mt-4">
                 <CheckList items={p.features[lang]} />
               </div>
             </Reveal>
+
+            {p.result && (
+              <Reveal as="article">
+                <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-text-900 sm:text-3xl">{ui.result}</h2>
+                <p className="mt-4 text-base leading-relaxed text-text-500 text-pretty sm:text-[17px]">{p.result[lang]}</p>
+              </Reveal>
+            )}
 
             {p.testimonial && (
               <Reveal as="figure" className="card relative p-6 sm:p-8">

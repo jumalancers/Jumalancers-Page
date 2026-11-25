@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { useLang } from "../i18n.jsx";
 import { waLink } from "../data/site.js";
+import { SERVICES as SERVICE_PAGES } from "../data/pages/services.js";
+import { SERVICE_KEYS } from "../routes.js";
 
 // Enlaces principales (orden del sitio). Los ids son los anclas de cada sección.
 const LINKS = [
@@ -116,7 +118,7 @@ function LangSwitch({ size = "sm", className = "inline-flex" }) {
 /* ---------- Navbar ---------- */
 
 export default function Navbar() {
-  const { t, homeHref } = useLang();
+  const { t, lang, homeHref, pageHref } = useLang();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
@@ -285,18 +287,50 @@ export default function Navbar() {
               />
               {LINKS.map((l) => {
                 const isActive = active === l.id;
+                const hasMenu = l.id === "services";
                 return (
-                  <li key={l.id}>
+                  <li key={l.id} className={hasMenu ? "group/dd relative" : undefined}>
                     <a
                       ref={(el) => (linkRefs.current[l.id] = el)}
                       href={homeHref(`#${l.id}`)}
                       aria-current={isActive ? "location" : undefined}
-                      className={`relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-medium transition-colors ${focusRing} ${
+                      className={`relative inline-flex h-9 items-center gap-1 rounded-full px-3.5 text-sm font-medium transition-colors ${focusRing} ${
                         isActive ? "text-text-900" : "text-text-500 hover:text-text-900"
                       }`}
                     >
                       {t(l.key)}
+                      {hasMenu && (
+                        <ChevronDown
+                          className="h-3.5 w-3.5 transition-transform duration-200 group-hover/dd:rotate-180 group-focus-within/dd:rotate-180"
+                          aria-hidden="true"
+                        />
+                      )}
                     </a>
+                    {hasMenu && (
+                      // Desplegable solo con CSS (hover / foco): funciona sin JS y con teclado.
+                      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover/dd:visible group-hover/dd:opacity-100 group-focus-within/dd:visible group-focus-within/dd:opacity-100">
+                        <ul className="w-72 rounded-2xl border border-white/10 bg-[hsl(167,47%,6%)] p-2 shadow-[0_20px_60px_-20px_rgb(0_0_0/0.6)] backdrop-blur-xl">
+                          {SERVICE_KEYS.map((k) => (
+                            <li key={k}>
+                              <a
+                                href={pageHref(k)}
+                                className="flex rounded-xl px-3.5 py-2.5 text-sm text-text-700 transition hover:bg-white/[0.06] hover:text-text-900 focus:outline-none focus-visible:bg-white/[0.06] focus-visible:text-text-900"
+                              >
+                                {SERVICE_PAGES[k][lang].eyebrow}
+                              </a>
+                            </li>
+                          ))}
+                          <li className="mt-1 border-t border-white/[0.08] pt-1">
+                            <a
+                              href={pageHref("process")}
+                              className="flex rounded-xl px-3.5 py-2.5 text-sm text-text-500 transition hover:bg-white/[0.06] hover:text-text-900 focus:outline-none focus-visible:bg-white/[0.06] focus-visible:text-text-900"
+                            >
+                              {t("process.eyebrow")}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
                   </li>
                 );
               })}
@@ -414,6 +448,21 @@ export default function Navbar() {
                       {t(l.key)}
                       <ArrowRight className="ml-auto h-5 w-5 self-center -translate-x-2 text-primary-300 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
                     </a>
+                    {l.id === "services" && (
+                      <ul className="-mt-1 grid grid-cols-1 gap-x-4 pb-4 pl-11 min-[420px]:grid-cols-2">
+                        {SERVICE_KEYS.map((k) => (
+                          <li key={k}>
+                            <a
+                              href={pageHref(k)}
+                              onClick={close}
+                              className="flex min-h-10 items-center text-[15px] text-text-500 transition hover:text-primary-300 focus:outline-none focus-visible:text-primary-300"
+                            >
+                              {SERVICE_PAGES[k][lang].eyebrow}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 );
               })}
