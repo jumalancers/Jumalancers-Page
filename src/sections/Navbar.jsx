@@ -4,6 +4,7 @@ import { useLang } from "../i18n.jsx";
 import { waLink } from "../data/site.js";
 import { SERVICES as SERVICE_PAGES } from "../data/pages/services.js";
 import { SERVICE_KEYS } from "../routes.js";
+import { TIJUANA_PAGE } from "../data/pages/tijuana.js";
 
 // Enlaces principales (orden del sitio). Los ids son los anclas de cada sección.
 const LINKS = [
@@ -323,6 +324,14 @@ export default function Navbar() {
                           ))}
                           <li className="mt-1 border-t border-white/[0.08] pt-1">
                             <a
+                              href={pageHref("tijuana")}
+                              className="flex rounded-xl px-3.5 py-2.5 text-sm text-text-500 transition hover:bg-white/[0.06] hover:text-text-900 focus:outline-none focus-visible:bg-white/[0.06] focus-visible:text-text-900"
+                            >
+                              {TIJUANA_PAGE[lang].eyebrow}
+                            </a>
+                          </li>
+                          <li>
+                            <a
                               href={pageHref("process")}
                               className="flex rounded-xl px-3.5 py-2.5 text-sm text-text-500 transition hover:bg-white/[0.06] hover:text-text-900 focus:outline-none focus-visible:bg-white/[0.06] focus-visible:text-text-900"
                             >
@@ -462,6 +471,15 @@ export default function Navbar() {
                             </a>
                           </li>
                         ))}
+                        <li>
+                          <a
+                            href={pageHref("tijuana")}
+                            onClick={close}
+                            className="flex min-h-10 items-center text-[15px] text-text-500 transition hover:text-primary-300 focus:outline-none focus-visible:text-primary-300"
+                          >
+                            {TIJUANA_PAGE[lang].eyebrow}
+                          </a>
+                        </li>
                       </ul>
                     )}
                   </li>

@@ -4,7 +4,7 @@ export default {
     badge: "Planes y precios",
     title: "Precios claros para tu sitio web,",
     titleAccent: "sin sorpresas",
-    desc: "Diseño de páginas web con precio fijo en USD, según cuántas páginas necesitas. Si buscas un sistema web a medida, definimos el alcance contigo.",
+    desc: "Diseño de páginas web con precio fijo en pesos o dólares, según cuántas páginas necesitas. Si buscas un sistema web a medida, definimos el alcance contigo.",
     included: "Todos los planes incluyen dominio, SSL, publicación y correos corporativos.",
     swipeHint: "Desliza para ver los planes",
     care: {
@@ -19,6 +19,7 @@ export default {
     labels: {
       plan: "Plan",
       investment: "Inversión única",
+      or: "o",
       currency: "USD",
       from: "Desde",
       recommended: "Recomendado",
@@ -32,9 +33,9 @@ export default {
       systems: "Hablar de mi proyecto",
     },
     wa: {
-      starter: "Hola Jumalancers, me interesa el plan Starter ($599 USD). ¿Me pueden dar más información?",
-      business: "Hola Jumalancers, me interesa el plan Business ($1,199 USD). ¿Me pueden dar más información?",
-      premium: "Hola Jumalancers, me interesa el plan Premium ($1,999 USD). ¿Me pueden dar más información?",
+      starter: "Hola Jumalancers, me interesa el plan Starter ($10,999 MXN / $599 USD). ¿Me pueden dar más información?",
+      business: "Hola Jumalancers, me interesa el plan Business ($21,999 MXN / $1,199 USD). ¿Me pueden dar más información?",
+      premium: "Hola Jumalancers, me interesa el plan Premium ($36,999 MXN / $1,999 USD). ¿Me pueden dar más información?",
       systems: "Hola Jumalancers, quiero platicar sobre un sistema / app web a la medida para mi negocio.",
     },
     cards: {
@@ -109,7 +110,7 @@ export default {
     badge: "Plans & pricing",
     title: "Clear website pricing,",
     titleAccent: "no surprises",
-    desc: "Small business website design at fixed USD prices, based on how many pages you need. Need a custom web app? We scope it with you.",
+    desc: "Small business website design at fixed prices in USD or MXN, based on how many pages you need. Need a custom web app? We scope it with you.",
     included: "Every plan includes domain, SSL, launch and business email.",
     swipeHint: "Swipe to see the plans",
     care: {
@@ -124,6 +125,7 @@ export default {
     labels: {
       plan: "Plan",
       investment: "One-time price",
+      or: "or",
       currency: "USD",
       from: "From",
       recommended: "Recommended",

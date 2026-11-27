@@ -14,7 +14,7 @@ export default {
     items: [
       {
         q: "¿Cuánto cuesta una página web en Tijuana?",
-        a: "Depende sobre todo de cuántas páginas necesitas: Starter $599 USD (1 página), Business $1,199 USD (2 a 3 páginas), Premium $1,999 USD (4 a 6 páginas) y Systems / App desde $2,999 USD (7 o más páginas o sistemas web a medida). Starter, Business y Premium incluyen diseño personalizado, hasta 6 secciones por página, dominio, hosting y SSL del primer año y correos corporativos. Las páginas más extensas, los idiomas adicionales y funciones como blog, citas o pagos tienen costo extra; el cotizador te da un estimado en un par de minutos. Desde el segundo año, la renovación es de $99, $149 o $199 USD al año según el plan.",
+        a: "Depende sobre todo de cuántas páginas necesitas: Starter $10,999 MXN o $599 USD (1 página), Business $21,999 MXN o $1,199 USD (2 a 3 páginas), Premium $36,999 MXN o $1,999 USD (4 a 6 páginas) y Systems / App desde $54,999 MXN o $2,999 USD (7 o más páginas o sistemas web a medida). Starter, Business y Premium incluyen diseño personalizado, hasta 6 secciones por página, dominio, hosting y SSL del primer año y correos corporativos. Las páginas más extensas, los idiomas adicionales y funciones como blog, citas o pagos tienen costo extra; el cotizador te da un estimado en un par de minutos. Desde el segundo año, la renovación es de $99, $149 o $199 USD al año según el plan.",
       },
       {
         q: "¿Cuánto tiempo tarda en estar lista mi página web?",
@@ -67,7 +67,7 @@ export default {
     items: [
       {
         q: "How much does a small business website cost?",
-        a: "Mostly it depends on how many pages you need: Starter $599 (1 page), Business $1,199 (2–3 pages), Premium $1,999 (4–6 pages) and Systems / App from $2,999 (7+ pages or custom web apps). All prices are fixed, in USD. Starter, Business and Premium include custom design, up to 6 sections per page, first-year domain, hosting and SSL, and business email. Content-heavy pages, extra languages and features like a blog, booking or payments cost extra; the quote calculator gives you an estimate in a couple of minutes. From year two, renewal is $99, $149 or $199 per year depending on the plan.",
+        a: "Mostly it depends on how many pages you need: Starter $599 ($10,999 MXN, 1 page), Business $1,199 ($21,999 MXN, 2–3 pages), Premium $1,999 ($36,999 MXN, 4–6 pages) and Systems / App from $2,999 ($54,999 MXN; 7+ pages or custom web apps). All prices are fixed, in USD. Starter, Business and Premium include custom design, up to 6 sections per page, first-year domain, hosting and SSL, and business email. Content-heavy pages, extra languages and features like a blog, booking or payments cost extra; the quote calculator gives you an estimate in a couple of minutes. From year two, renewal is $99, $149 or $199 per year depending on the plan.",
       },
       {
         q: "How long does it take to build my website?",

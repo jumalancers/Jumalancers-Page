@@ -5,12 +5,13 @@ import Reveal from "../components/Reveal.jsx";
 import { Section, SectionHeader } from "../components/ui/index.jsx";
 import { waLink } from "../data/site.js";
 
-// Precios en USD (se muestran tal cual; no cambiar sin el dueño).
+// Precios fijos (no cambiar sin el dueño). En español se muestra primero el precio en pesos
+// y abajo el de dólares; en inglés al revés. Lista en MXN = data/pages/tijuana.js (revisar cada 3 meses).
 const PLANS = [
-  { key: "starter", n: 1, price: "$599" },
-  { key: "business", n: 2, price: "$1,199", featured: true },
-  { key: "premium", n: 3, price: "$1,999" },
-  { key: "systems", n: 4, price: "$2,999", from: true },
+  { key: "starter", n: 1, price: "$599", mxn: "$10,999" },
+  { key: "business", n: 2, price: "$1,199", mxn: "$21,999", featured: true },
+  { key: "premium", n: 3, price: "$1,999", mxn: "$36,999" },
+  { key: "systems", n: 4, price: "$2,999", mxn: "$54,999", from: true },
 ];
 
 const FEATURED_INDEX = PLANS.findIndex((p) => p.featured);
@@ -52,8 +53,12 @@ function FeatureList({ items, featured }) {
   );
 }
 
-function PlanCard({ plan, t }) {
-  const { key, n, price, featured, from } = plan;
+function PlanCard({ plan, t, lang }) {
+  const { key, n, price, mxn, featured, from } = plan;
+  const es = lang === "es";
+  const main = es ? mxn : price;
+  const mainCur = es ? "MXN" : "USD";
+  const alt = es ? `${price} USD` : `${mxn} MXN`;
   const name = t(`plans.cards.${key}.name`);
   const items = t(`plans.cards.${key}.items`);
 
@@ -101,11 +106,12 @@ function PlanCard({ plan, t }) {
         </p>
         <p className="mt-1 flex items-baseline gap-2">
           <span className="font-display text-[2.75rem] font-semibold leading-none tracking-[-0.04em] text-text-900 tabular-nums">
-            {price}
+            {main}
           </span>
-          <span className="text-sm font-medium text-text-300">
-            {t("plans.labels.currency")}
-          </span>
+          <span className="text-sm font-medium text-text-300">{mainCur}</span>
+        </p>
+        <p className="mt-1.5 text-sm text-text-500 tabular-nums">
+          {t("plans.labels.or")} {alt}
         </p>
         <p className="mt-3 text-[13px] text-text-300 sm:text-xs">{t(`plans.cards.${key}.renewal`)}</p>
       </div>
@@ -147,7 +153,7 @@ function PlanCard({ plan, t }) {
 }
 
 export default function Plans() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const trackRef = useRef(null);
   const [active, setActive] = useState(FEATURED_INDEX);
 
@@ -231,7 +237,7 @@ export default function Plans() {
             key={plan.key}
             className="w-[86%] max-w-[340px] shrink-0 snap-center md:w-auto md:max-w-none"
           >
-            <PlanCard plan={plan} t={t} />
+            <PlanCard plan={plan} t={t} lang={lang} />
           </div>
         ))}
       </div>
