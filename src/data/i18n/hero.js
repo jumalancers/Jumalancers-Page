@@ -7,7 +7,7 @@ export default {
     titleAccent: "crecer",
     titleB: "tu negocio.",
     desc:
-      "Diseñamos sitios web rápidos y sistemas a medida para negocios en México y EE. UU. En español, inglés o bilingües, con SEO técnico y precio fijo en USD.",
+      "Diseñamos sitios web rápidos y sistemas a medida para negocios en México y EE. UU. En español, inglés o bilingües, con SEO técnico y precio fijo en pesos o dólares.",
     ctaPrimary: "Cotizar mi proyecto",
     ctaSecondary: "Ver trabajos",
     proof: {
@@ -32,7 +32,7 @@ export default {
     titleAccent: "grow",
     titleB: "your business.",
     desc:
-      "Fast, SEO-ready websites in English, Spanish or both. Fixed prices in USD, launch in 1–3 weeks, and direct communication on Pacific Time.",
+      "Fast, SEO-ready websites in English, Spanish or both. Fixed prices in USD or MXN, launch in 1–3 weeks, and direct communication on Pacific Time.",
     ctaPrimary: "Get a free quote",
     ctaSecondary: "See our work",
     proof: {

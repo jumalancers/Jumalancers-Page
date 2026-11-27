@@ -5,9 +5,9 @@
  * Precio, alcance y desglose salen de computeQuote() (engine.js).
  */
 import jsPDF from "jspdf";
+import { money, CURRENCY } from "../../money.js";
 import {
   CONTACT,
-  formatUSD,
   multiplierLabel,
   planName,
   priceText,
@@ -165,7 +165,7 @@ export function buildPdf({ summary, estimate, breakdown, t, lang }) {
   stat(
     M,
     t("quote.pdf.estimatedInvestment"),
-    priceText(estimate, t),
+    `${priceText(estimate, t, lang)} ${CURRENCY[lang] || "USD"}`,
     estimate.isOverCap
       ? t("quote.pdf.investmentHintOverCap")
       : estimate.priceMode === "from"
@@ -292,10 +292,10 @@ export function buildPdf({ summary, estimate, breakdown, t, lang }) {
   if (base != null)
     lineItem(
       `${t("quote.pdf.baseScopeRef")} · ${planName(estimate, t)}`,
-      `$${formatUSD(base)}`,
+      money(base, lang),
     );
   if (addons != null)
-    lineItem(t("quote.pdf.addons"), `$${formatUSD(addons)}`);
+    lineItem(t("quote.pdf.addons"), money(addons, lang));
 
   lineItem(
     t(estimate.plan === "custom" ? "quote.pdf.domainSsl" : "quote.pdf.domainHosting"),
@@ -303,7 +303,7 @@ export function buildPdf({ summary, estimate, breakdown, t, lang }) {
   );
   lineItem(
     t("quote.pdf.corporateEmailsAnnual"),
-    `$${formatUSD(emailCost)}`,
+    money(emailCost, lang),
   );
 
   doc.setFont("helvetica", "normal");

@@ -10,7 +10,7 @@ export const POSTS = [
       slug: "cuanto-cuesta-una-pagina-web",
       title: "¿Cuánto cuesta una página web para un negocio en 2026?",
       metaDesc:
-        "Qué hace que una página web cueste más o menos, qué debe incluir el precio y cuánto se paga después del primer año. Con nuestros precios reales en USD.",
+        "Qué hace que una página web cueste más o menos, qué debe incluir el precio y cuánto se paga después del primer año. Con nuestros precios reales en pesos y dólares.",
       excerpt:
         "Qué hace que una página web cueste más o menos, qué debe incluir el precio y cuánto se paga después del primer año, con nuestros precios reales.",
       body: [
@@ -32,16 +32,16 @@ export const POSTS = [
           "Rondas de revisión antes de publicar.",
         ] },
         { h2: "Nuestros precios, como referencia" },
-        { p: "Nuestros planes tienen precio fijo en dólares y todos incluyen dominio, hosting y SSL del primer año, diseño a medida y correos corporativos:" },
+        { p: "Nuestros planes tienen precio fijo en pesos y dólares, y todos incluyen dominio, hosting y SSL del primer año, diseño a medida y correos corporativos:" },
         { ul: [
-          "Starter, $599 USD: 1 página con hasta 6 secciones. Entrega en 7 a 10 días hábiles.",
-          "Business, $1,199 USD: 2 a 3 páginas. Entrega en 10 a 14 días hábiles.",
-          "Premium, $1,999 USD: 4 a 6 páginas, con SEO avanzado y analítica. Entrega en 14 a 21 días hábiles.",
-          "Systems / App, desde $2,999 USD: sitios de 7 páginas o más, o sistemas a medida con base de datos.",
+          "Starter, $10,999 MXN ($599 USD): 1 página con hasta 6 secciones. Entrega en 7 a 10 días hábiles.",
+          "Business, $21,999 MXN ($1,199 USD): 2 a 3 páginas. Entrega en 10 a 14 días hábiles.",
+          "Premium, $36,999 MXN ($1,999 USD): 4 a 6 páginas, con SEO avanzado y analítica. Entrega en 14 a 21 días hábiles.",
+          "Systems / App, desde $54,999 MXN ($2,999 USD): sitios de 7 páginas o más, o sistemas a medida con base de datos.",
         ] },
         { p: "Cada plan incluye un idioma; el segundo idioma y funciones como blog, citas o pagos se cotizan aparte." },
         { h2: "Lo que pagas después del primer año" },
-        { p: "Una página web tiene un costo anual: el dominio y el hosting se renuevan. Pregunta siempre cuánto cuesta la renovación antes de contratar. En nuestro caso es de $99, $149 o $199 USD al año según el plan, e incluye 2 cambios de contenido al año. Si necesitas más cambios, cada uno cuesta $29 USD, o hay un plan de $39 USD al mes con 4 cambios." },
+        { p: "Una página web tiene un costo anual: el dominio y el hosting se renuevan. Pregunta siempre cuánto cuesta la renovación antes de contratar. En nuestro caso es de $1,799, $2,699 o $3,699 MXN ($99, $149 o $3,699 MXN ($199 USD)) al año según el plan, e incluye 2 cambios de contenido al año. Si necesitas más cambios, cada uno cuesta $549 MXN ($29 USD), o hay un plan de $699 MXN ($39 USD) al mes con 4 cambios." },
         { h2: "¿Cómo sé cuál necesito?" },
         { p: "Si estás empezando y quieres que te encuentren y te escriban, una sola página bien hecha suele ser suficiente. Si quieres que cada servicio aparezca en Google por separado, conviene una página por servicio. Y si hoy llevas tus pedidos o cotizaciones en hojas de cálculo y WhatsApp, probablemente lo que necesitas es un sistema." },
         { cta: "websites" },
@@ -51,7 +51,7 @@ export const POSTS = [
       slug: "how-much-does-a-website-cost",
       title: "How Much Does a Small Business Website Cost in 2026?",
       metaDesc:
-        "What makes a website cost more or less, what the price should include and what you pay after the first year. With our real prices in USD.",
+        "What makes a website cost more or less, what the price should include and what you pay after the first year. With our real prices in USD and MXN.",
       excerpt:
         "What makes a website cost more or less, what the price should include and what you pay after the first year, with our real prices.",
       body: [
@@ -73,16 +73,16 @@ export const POSTS = [
           "Revision rounds before launch.",
         ] },
         { h2: "Our prices, as a reference" },
-        { p: "Our plans have fixed USD prices and all include domain, hosting and SSL for the first year, custom design and business email:" },
+        { p: "Our plans have fixed prices in USD (and MXN) and all include domain, hosting and SSL for the first year, custom design and business email:" },
         { ul: [
-          "Starter, $599 USD: 1 page with up to 6 sections. Delivered in 7 to 10 business days.",
-          "Business, $1,199 USD: 2 to 3 pages. Delivered in 10 to 14 business days.",
-          "Premium, $1,999 USD: 4 to 6 pages, with advanced SEO and analytics. Delivered in 14 to 21 business days.",
-          "Systems / App, from $2,999 USD: sites with 7 or more pages, or custom apps with a database.",
+          "Starter, $599 USD ($10,999 MXN): 1 page with up to 6 sections. Delivered in 7 to 10 business days.",
+          "Business, $1,199 USD ($21,999 MXN): 2 to 3 pages. Delivered in 10 to 14 business days.",
+          "Premium, $1,999 USD ($36,999 MXN): 4 to 6 pages, with advanced SEO and analytics. Delivered in 14 to 21 business days.",
+          "Systems / App, from $2,999 USD ($54,999 MXN): sites with 7 or more pages, or custom apps with a database.",
         ] },
         { p: "Each plan includes one language; a second language and features like a blog, booking or payments are quoted separately." },
         { h2: "What you pay after the first year" },
-        { p: "A website has a yearly cost: the domain and hosting renew. Always ask how much renewal costs before you sign. For us it's $99, $149 or $199 USD a year depending on the plan, and it includes 2 content updates a year. If you need more changes, each one is $29 USD, or there's a $39 USD monthly plan with 4 updates." },
+        { p: "A website has a yearly cost: the domain and hosting renew. Always ask how much renewal costs before you sign. For us it's $99, $149 or $199 USD ($1,799, $2,699 or $3,699 MXN) a year depending on the plan, and it includes 2 content updates a year. If you need more changes, each one is $29 USD ($549 MXN), or there's a $39 USD ($699 MXN) monthly plan with 4 updates." },
         { h2: "How do I know which one I need?" },
         { p: "If you're just starting out and want people to find you and reach out, one well-built page is usually enough. If you want each service to show up on Google on its own, it's better to have one page per service. And if today you track orders or quotes in spreadsheets and WhatsApp, what you probably need is a web app." },
         { cta: "websites" },

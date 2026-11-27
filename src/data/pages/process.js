@@ -61,7 +61,7 @@ export const PROCESS_PAGE = {
         title: "Soporte continuo",
         p: [
           "Seguimos disponibles para cambios, nuevas secciones o mejoras. Te respondemos en menos de 24 horas por WhatsApp o correo.",
-          "Desde el segundo año, la renovación ($99, $149 o $199 USD al año según el plan) cubre dominio, hosting y SSL e incluye 2 cambios al año. Cada cambio extra cuesta $29 USD, o hay un plan mensual de $39 USD con 4 cambios al mes.",
+          "Desde el segundo año, la renovación ($1,799, $2,699 o $3,699 MXN ($99, $149 o $3,699 MXN ($199 USD)) al año según el plan) cubre dominio, hosting y SSL e incluye 2 cambios al año. Cada cambio extra cuesta $549 MXN ($29 USD), o hay un plan mensual de $699 MXN ($39 USD) con 4 cambios al mes.",
         ],
         need: ["Avisarnos qué quieres cambiar o agregar"],
         get: ["Cambios y actualizaciones", "Respuesta en menos de 24 horas", "Nuevas secciones cuando las necesites"],
@@ -154,7 +154,7 @@ export const PROCESS_PAGE = {
         title: "Continued support",
         p: [
           "We stay available for changes, new sections or improvements. We reply within 24 hours over WhatsApp or email.",
-          "From the second year, renewal ($99, $149 or $199 USD a year depending on the plan) covers domain, hosting and SSL and includes 2 updates a year. Each extra update is $29 USD, or there's a $39 USD monthly plan with 4 updates a month.",
+          "From the second year, renewal ($99, $149 or $199 USD ($1,799, $2,699 or $3,699 MXN) a year depending on the plan) covers domain, hosting and SSL and includes 2 updates a year. Each extra update is $29 USD ($549 MXN), or there's a $39 USD ($699 MXN) monthly plan with 4 updates a month.",
         ],
         need: ["Let us know what you want to change or add"],
         get: ["Edits and updates", "Replies within 24 hours", "New sections when you need them"],

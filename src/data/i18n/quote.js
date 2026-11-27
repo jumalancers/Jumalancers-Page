@@ -97,7 +97,7 @@ export default {
       },
       "advanced_system": {
         "label": "Sistema avanzado (roles, reportes, filtros)",
-        "note": "Pasa a desarrollo a medida (desde $2,999 USD)."
+        "note": "Pasa a desarrollo a medida (desde $54,999 MXN / $2,999 USD)."
       },
       "integrations": {
         "label": "Integraciones externas",
@@ -115,7 +115,7 @@ export default {
     "supportHint": "Afecta tiempo e inversión: no es lo mismo implementar tu contenido que crearlo.",
     "q5": "Correos corporativos",
     "emailsLabel": "Cuentas de correo que necesitas",
-    "perAccount_a": "USD",
+    "perAccount_a": "MXN",
     "perAccount_b": "por cuenta extra al año",
     "emailCostLabel": "Costo de cuentas extra:",
     "perYear": "/ año",
@@ -142,7 +142,7 @@ export default {
     "addons": "Extras",
     "infraSeparate": "Infraestructura (anual, aparte)",
     "corporateEmails": "Correos corporativos",
-    "emailsBilledSeparately": "Cada cuenta extra cuesta $19 USD al año y se cobra aparte de la inversión del sitio.",
+    "emailsBilledSeparately": "Cada cuenta extra cuesta $349 MXN ($19 USD) al año y se cobra aparte de la inversión del sitio.",
     "previewPdf": "Ver PDF",
     "downloadPdf": "Descargar PDF",
     "estimateNote": "Sin compromiso — este estimado es solo una referencia.",
@@ -157,7 +157,7 @@ export default {
       "title": "Resumen de cotización instantánea",
       "generated": "Generado",
       "estimatedInvestment": "Inversión estimada",
-      "investmentHintOverCap": "$8,000+ sugiere un desarrollo a medida",
+      "investmentHintOverCap": "$146,999+ MXN sugiere un desarrollo a medida",
       "investmentHintRange": "El rango se ajusta según el alcance",
       "time": "Tiempo",
       "businessDays": "días hábiles",
@@ -215,7 +215,7 @@ export default {
       "investmentHintFrom": "Punto de partida; el alcance final se define contigo",
       "domainHosting": "Dominio + hosting + SSL (primer año)",
       "domainSsl": "Dominio + SSL (primer año)",
-      "noteCustom": "Nota: el desarrollo es un pago único. El dominio y SSL del primer año están incluidos; el hosting de la app se cobra aparte ($79–149 USD / mes según el proyecto). Los correos extra se cobran aparte cada año.",
+      "noteCustom": "Nota: el desarrollo es un pago único. El dominio y SSL del primer año están incluidos; el hosting de la app se cobra aparte ($1,399–2,699 MXN / $79–149 USD al mes según el proyecto). Los correos extra se cobran aparte cada año.",
       "included": "Incluido",
       "emails": "Correos corporativos",
       "emailsValue": "{n} en total · {inc} incluidos · {extra} extra"
@@ -265,7 +265,7 @@ export default {
     "emailsExtra": "Cuentas extra",
     "domainHosting": "Dominio + hosting + SSL (1er año)",
     "domainSsl": "Dominio + SSL (1er año)",
-    "appHosting": "Hosting de la app: $79–149 USD / mes (aparte).",
+    "appHosting": "Hosting de la app: $1,399–2,699 MXN / mes (aparte).",
     "emailsIncludedShort": "incluidas",
     "emailsExtraShort": "extra"
   },

@@ -33,6 +33,7 @@ import { useLang } from "../i18n.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { Section, SectionHeader } from "../components/ui/index.jsx";
 import { waLink } from "../data/site.js";
+import { money, CURRENCY } from "../money.js";
 import { track } from "../analytics.js";
 import {
   ADVANCED_SYSTEM_KEY,
@@ -46,7 +47,6 @@ import {
   buildSummary,
   computeQuote,
   featureI18nKey,
-  formatUSD,
   multiplierLabel,
   normalizeEmails,
   planName,
@@ -378,7 +378,8 @@ export default function InstantQuoteSection() {
   const summary = useMemo(() => buildSummary(answers, q, t), [answers, q, t]);
   const isCustom = q.isCustom;
   const plan = planName(q, t);
-  const price = priceText(q, t);
+  const price = priceText(q, t, lang);
+  const cur = CURRENCY[lang];
 
   /* ---------- PDF (carga dinámica) ---------- */
   const [pdfOpen, setPdfOpen] = useState(false);
@@ -453,7 +454,7 @@ export default function InstantQuoteSection() {
   const waHref = waLink(
     [
       t("quote.whatsappMsg"),
-      `• ${t("quote.waInvestment")}: ${price} USD`,
+      `• ${t("quote.waInvestment")}: ${price} ${cur}`,
       `• ${t("quote.waTime")}: ${q.days[0]}–${q.days[1]} ${t("quote.businessDays")}`,
       `• ${t("quote.waScope")}: ${plan} · ${t("quote.pages")} ${summary.pagesLabel} · ${t("quote.totalSections")} ${summary.totalSections}`,
       `• ${t("quote.waFeatures")}: ${summary.featuresLabel}`,
@@ -615,7 +616,7 @@ export default function InstantQuoteSection() {
                 <p className="text-sm font-semibold text-text-900">{t("quote.customDetectedTitle")}</p>
                 <p className="mt-1 text-sm leading-relaxed text-text-500">
                   {t("quote.customDetectedDesc_a")}{" "}
-                  <span className="font-semibold text-text-900">{price}</span> USD.
+                  <span className="font-semibold text-text-900">{price}</span> {cur}.
                 </p>
               </div>
             </div>
@@ -710,19 +711,19 @@ export default function InstantQuoteSection() {
                 <dd className="font-semibold text-text-900 tabular-nums">
                   {q.extraEmails}{" "}
                   <span className="font-normal text-text-300">
-                    × ${EMAIL_PRICE} {t("quote.perAccount_a")}
+                    × {money(EMAIL_PRICE, lang)} {t("quote.perAccount_a")}
                   </span>
                 </dd>
               </div>
               <div className="flex items-center justify-between gap-3">
                 <dt className="text-text-500">{t("quote.emailCostLabel")}</dt>
                 <dd className="font-semibold text-text-900 tabular-nums">
-                  ${formatUSD(q.emailCost)} <span className="font-normal text-text-300">{t("quote.perYear")}</span>
+                  {money(q.emailCost, lang)} <span className="font-normal text-text-300">{t("quote.perYear")}</span>
                 </dd>
               </div>
             </dl>
             <p className="mt-3 text-[13px] text-text-300 sm:text-xs">
-              ${EMAIL_PRICE} {t("quote.perAccount_a")} {t("quote.perAccount_b")}
+              {money(EMAIL_PRICE, lang)} {t("quote.perAccount_a")} {t("quote.perAccount_b")}
             </p>
           </div>
           <Hint>{t("quote.emailHint")}</Hint>
@@ -764,8 +765,9 @@ export default function InstantQuoteSection() {
     <>{price}</>
   ) : (
     <>
-      ${formatUSD(q.priceLow)}
-      <span className="mx-1.5 text-text-300">–</span>${formatUSD(q.priceHigh)}
+      {money(q.priceLow, lang)}
+      <span className="mx-1.5 text-text-300">–</span>
+      {money(q.priceHigh, lang)}
     </>
   );
 
@@ -922,13 +924,18 @@ export default function InstantQuoteSection() {
                     </span>
                   </div>
 
-                  <p className="mt-6 text-sm text-text-500">{t("quote.investment")} (USD)</p>
+                  <p className="mt-6 text-sm text-text-500">{t("quote.investment")} ({cur})</p>
                   <p
                     key={`${q.priceLow}-${q.priceMode}`}
                     className="mt-1 font-display text-[2.5rem] font-semibold leading-none tracking-[-0.04em] text-text-900 tabular-nums motion-safe:animate-[quote-pop_.35s_ease-out] sm:text-5xl"
                   >
                     {priceNode}
                   </p>
+                  {lang === "es" && q.priceMode === "range" && (
+                    <p className="mt-2 text-sm text-text-500 tabular-nums">
+                      ≈ ${Math.round(q.priceLow).toLocaleString("en-US")} – ${Math.round(q.priceHigh).toLocaleString("en-US")} USD
+                    </p>
+                  )}
                   <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm text-text-700">
                     <Clock className="h-4 w-4 text-primary-300" aria-hidden="true" />
                     <span className="tabular-nums">
@@ -945,7 +952,7 @@ export default function InstantQuoteSection() {
                       </p>
                       <p className="mt-1.5 text-sm leading-relaxed text-text-500">
                         {t("quote.customRecommendedDesc_a")}{" "}
-                        <span className="font-semibold text-text-900">{price}</span> USD.{" "}
+                        <span className="font-semibold text-text-900">{price}</span> {cur}.{" "}
                         {t("quote.customRecommendedDesc_b")}
                       </p>
                     </div>
@@ -975,11 +982,11 @@ export default function InstantQuoteSection() {
                         <dt className="text-text-500">
                           {t("quote.base")} ({plan})
                         </dt>
-                        <dd className="font-semibold text-text-900 tabular-nums">${formatUSD(q.basePrice)}</dd>
+                        <dd className="font-semibold text-text-900 tabular-nums">{money(q.basePrice, lang)}</dd>
                       </div>
                       <div className="flex items-center justify-between gap-3">
                         <dt className="text-text-500">{t("quote.addons")}</dt>
-                        <dd className="font-semibold text-text-900 tabular-nums">${formatUSD(q.addonsPrice)}</dd>
+                        <dd className="font-semibold text-text-900 tabular-nums">{money(q.addonsPrice, lang)}</dd>
                       </div>
                       <div className="flex items-center justify-between gap-3">
                         <dt className="text-text-500">
@@ -1013,7 +1020,7 @@ export default function InstantQuoteSection() {
                         {t("quote.corporateEmails")}
                       </span>
                       <span className="shrink-0 whitespace-nowrap font-semibold text-text-900 tabular-nums">
-                        ${formatUSD(q.emailCost)} <span className="font-normal text-text-300">{t("quote.perYear")}</span>
+                        {money(q.emailCost, lang)} <span className="font-normal text-text-300">{t("quote.perYear")}</span>
                       </span>
                     </div>
                     <p className="mt-1 pl-6 text-xs text-text-300 tabular-nums">
@@ -1079,7 +1086,7 @@ export default function InstantQuoteSection() {
 
       {/* Anuncio para lectores de pantalla */}
       <p className="sr-only" aria-live="polite">
-        {t("quote.estimateAria")}: {price} USD, {q.days[0]}–{q.days[1]} {t("quote.businessDays")}
+        {t("quote.estimateAria")}: {price} {cur}, {q.days[0]}–{q.days[1]} {t("quote.businessDays")}
       </p>
 
     </Section>

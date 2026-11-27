@@ -140,7 +140,7 @@ function Field({ id, label, required, optional, error, textarea, className = "",
 }
 
 export default function ContactSection() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
@@ -222,7 +222,7 @@ export default function ContactSection() {
         to_email: SITE.email,
         // Variables nuevas
         project_type: form.type ? t(`contact.form.types.${form.type}`) : "—",
-        budget: form.budget ? `${t(`contact.form.budgets.${form.budget}`)} USD` : "—",
+        budget: form.budget ? `${t(`contact.form.budgets.${form.budget}`)} ${lang === "es" ? "MXN" : "USD"}` : "—",
       };
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, PUBLIC_KEY);
       track("generate_lead", { form: "contact", project_type: form.type || "none", budget: form.budget || "none" });

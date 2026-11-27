@@ -97,7 +97,7 @@ export default {
         desc: "Metadata, structured data, sitemap, and semantic HTML from day one.",
       },
       {
-        title: "Fixed prices in USD",
+        title: "Fixed prices, in USD or MXN",
         desc: "You know what your plan includes, what it costs and when it launches. No surprise fees.",
       },
       {

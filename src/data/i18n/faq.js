@@ -22,7 +22,7 @@ export default {
       },
       {
         q: "¿Incluye dominio, hosting y correos corporativos?",
-        a: "Sí. Starter, Business y Premium incluyen dominio, hosting y certificado SSL el primer año sin costo adicional, además de 1, 3 o 5 correos corporativos (tu-nombre@tu-negocio.com) según el plan. Cada correo extra cuesta $19 USD al año. Nosotros hacemos toda la configuración técnica.",
+        a: "Sí. Starter, Business y Premium incluyen dominio, hosting y certificado SSL el primer año sin costo adicional, además de 1, 3 o 5 correos corporativos (tu-nombre@tu-negocio.com) según el plan. Cada correo extra cuesta $349 MXN ($19 USD) al año. Nosotros hacemos toda la configuración técnica.",
       },
       {
         q: "¿Atienden negocios en Estados Unidos?",
@@ -42,15 +42,15 @@ export default {
       },
       {
         q: "¿Qué pasa después del lanzamiento? ¿Dan mantenimiento?",
-        a: "Tu sitio queda publicado con dominio, hosting y SSL activos, y seguimos disponibles para soporte, ajustes y nuevas secciones. La renovación anual ($99, $149 o $199 USD según el plan) cubre dominio y hosting e incluye 2 cambios al año. Cada cambio extra cuesta $29 USD (hasta 10 imágenes o un bloque de texto), y si actualizas seguido hay un plan mensual de $39 USD con 4 cambios al mes. Si cambias contenido cada semana, te conviene un panel para hacerlo tú mismo. Si tu sitio usa base de datos, los respaldos se acuerdan en el proyecto.",
+        a: "Tu sitio queda publicado con dominio, hosting y SSL activos, y seguimos disponibles para soporte, ajustes y nuevas secciones. La renovación anual ($1,799, $2,699 o $3,699 MXN; $99, $149 o $199 USD según el plan) cubre dominio y hosting e incluye 2 cambios al año. Cada cambio extra cuesta $549 MXN o $29 USD (hasta 10 imágenes o un bloque de texto), y si actualizas seguido hay un plan mensual de $699 MXN o $39 USD con 4 cambios al mes. Si cambias contenido cada semana, te conviene un panel para hacerlo tú mismo. Si tu sitio usa base de datos, los respaldos se acuerdan en el proyecto.",
       },
       {
         q: "¿Hacen sistemas web a medida (pedidos, citas, dashboards)?",
-        a: "Sí. Con el plan Systems / App desarrollamos aplicaciones web con base de datos: sistemas de pedidos, agenda de citas, catálogos con cotizador, paneles administrativos y dashboards con roles, reportes y filtros, login de usuarios e integraciones de pagos, APIs o correo. Parten de $2,999 USD (también aplica a sitios de 7 o más páginas); el hosting de la app va de $79 a $149 USD al mes y el alcance y los tiempos se definen contigo.",
+        a: "Sí. Con el plan Systems / App desarrollamos aplicaciones web con base de datos: sistemas de pedidos, agenda de citas, catálogos con cotizador, paneles administrativos y dashboards con roles, reportes y filtros, login de usuarios e integraciones de pagos, APIs o correo. Parten de $54,999 MXN o $2,999 USD (también aplica a sitios de 7 o más páginas); el hosting de la app va de $1,399 a $2,699 MXN ($79 a $149 USD) al mes y el alcance y los tiempos se definen contigo.",
       },
       {
         q: "¿Cómo se paga? ¿Piden anticipo?",
-        a: "Los precios están en dólares (USD) y también aceptamos pago en pesos (MXN). El pago es por transferencia a una cuenta en México. Te damos una propuesta con precio cerrado, y el esquema de pago (por ejemplo, anticipo para arrancar y saldo a la entrega) queda por escrito antes de empezar.",
+        a: "Los precios están en pesos (MXN) y en dólares (USD), y puedes pagar en cualquiera de las dos monedas. El pago es por transferencia a una cuenta en México. Te damos una propuesta con precio cerrado, y el esquema de pago (por ejemplo, anticipo para arrancar y saldo a la entrega) queda por escrito antes de empezar.",
       },
     ],
   },
@@ -95,15 +95,15 @@ export default {
       },
       {
         q: "What happens after launch? Do you offer maintenance?",
-        a: "Your site goes live with domain, hosting and SSL active, and we stay available for support, tweaks and new sections. The yearly renewal ($99, $149 or $199 depending on the plan) covers domain and hosting and includes 2 content updates a year. Each extra update is $29 USD (up to 10 images or one block of text), and if you update often there's a $39 USD/month plan with 4 updates a month. If you change content every week, an admin panel to do it yourself is the better deal. If your site uses a database, backups are agreed per project.",
+        a: "Your site goes live with domain, hosting and SSL active, and we stay available for support, tweaks and new sections. The yearly renewal ($99, $149 or $199 USD; $1,799, $2,699 or $3,699 MXN depending on the plan) covers domain and hosting and includes 2 content updates a year. Each extra update is $29 USD or $549 MXN (up to 10 images or one block of text), and if you update often there's a $39 USD ($699 MXN)/month plan with 4 updates a month. If you change content every week, an admin panel to do it yourself is the better deal. If your site uses a database, backups are agreed per project.",
       },
       {
         q: "Do you build custom web apps (orders, bookings, dashboards)?",
-        a: "Yes. With the Systems / App plan we build web applications with a database: ordering systems, appointment booking, quoting catalogs, admin panels and dashboards with roles, reports and filters, user logins and integrations for payments, APIs or email. Projects start at $2,999 (this also covers 7+ page websites); app hosting runs $79–149 per month, and scope and timeline are defined with you.",
+        a: "Yes. With the Systems / App plan we build web applications with a database: ordering systems, appointment booking, quoting catalogs, admin panels and dashboards with roles, reports and filters, user logins and integrations for payments, APIs or email. Projects start at $2,999 USD or $54,999 MXN (this also covers 7+ page websites); app hosting runs $79–149 USD ($1,399–2,699 MXN) per month, and scope and timeline are defined with you.",
       },
       {
         q: "How does payment work? Do you require a deposit?",
-        a: "Prices are fixed and in US dollars (USD). Payment is by bank transfer to an account in Mexico (USD or MXN). You get a fixed-price proposal, and the payment schedule (for example, a deposit to start and the balance on delivery) is agreed in writing before we begin.",
+        a: "Prices are fixed, in US dollars (USD) and Mexican pesos (MXN). Payment is by bank transfer to an account in Mexico, in either currency. You get a fixed-price proposal, and the payment schedule (for example, a deposit to start and the balance on delivery) is agreed in writing before we begin.",
       },
     ],
   },

@@ -10,9 +10,9 @@ export default {
     care: {
       title: "Después del lanzamiento",
       items: [
-        { name: "Renovación anual", price: "$99–199 USD / año", note: "Dominio, hosting y SSL, con 2 cambios al año incluidos." },
-        { name: "Cambio extra", price: "$29 USD", note: "Por solicitud: hasta 10 imágenes o un bloque de texto." },
-        { name: "Plan mensual", price: "$39 USD / mes", note: "4 cambios al mes, para negocios que actualizan seguido." },
+        { name: "Renovación anual", price: "$1,799–3,699 MXN / año", note: "Dominio, hosting y SSL, con 2 cambios al año incluidos ($99–199 USD)." },
+        { name: "Cambio extra", price: "$549 MXN", note: "Por solicitud: hasta 10 imágenes o un bloque de texto ($29 USD)." },
+        { name: "Plan mensual", price: "$699 MXN / mes", note: "4 cambios al mes, para negocios que actualizan seguido ($39 USD)." },
       ],
     },
     compareCta: "¿No sabes cuál elegir? Usa el cotizador",
@@ -42,7 +42,7 @@ export default {
       starter: {
         name: "Starter",
         desc: "Una página profesional para empezar a recibir clientes en línea.",
-        renewal: "Renovación: $99 USD / año · incluye 2 cambios",
+        renewal: "Renovación: $1,799 MXN ($99 USD) / año · incluye 2 cambios",
         items: [
           "1 página (landing) con diseño personalizado",
           "Hasta 6 secciones (más secciones tienen un ajuste)",
@@ -51,7 +51,7 @@ export default {
           "Galería o portafolio + mapa + redes sociales",
           "Configuración SEO",
           "Dominio + hosting + SSL del primer año",
-          "1 correo corporativo (extra: $19 USD/año c/u)",
+          "1 correo corporativo (extra: $349 MXN / $19 USD al año c/u)",
           "En español o inglés; otros idiomas como extra",
           "Entrega en 7–10 días hábiles · 2 rondas de revisión",
         ],
@@ -59,7 +59,7 @@ export default {
       business: {
         name: "Business",
         desc: "Para negocios en crecimiento que quieren posicionarse mejor en Google.",
-        renewal: "Renovación: $149 USD / año · incluye 2 cambios",
+        renewal: "Renovación: $2,699 MXN ($149 USD) / año · incluye 2 cambios",
         items: [
           "Todo lo de Starter, más:",
           "2 a 3 páginas",
@@ -67,7 +67,7 @@ export default {
           "Diseño más completo + textos más persuasivos",
           "Configuración SEO mejorada",
           "Dominio + hosting + SSL del primer año",
-          "3 correos corporativos (extra: $19 USD/año c/u)",
+          "3 correos corporativos (extra: $349 MXN / $19 USD al año c/u)",
           "En español o inglés; bilingüe u otros idiomas como extra",
           "Entrega en 10–14 días hábiles · 4 rondas de revisión",
         ],
@@ -75,7 +75,7 @@ export default {
       premium: {
         name: "Premium",
         desc: "Un sitio completo y estratégico para crecer en serio.",
-        renewal: "Renovación: $199 USD / año · incluye 2 cambios",
+        renewal: "Renovación: $3,699 MXN ($199 USD) / año · incluye 2 cambios",
         items: [
           "Todo lo de Business, más:",
           "4 a 6 páginas",
@@ -84,7 +84,7 @@ export default {
           "SEO avanzado + configuración de rendimiento",
           "Integración de analítica",
           "Dominio + hosting + SSL del primer año",
-          "5 correos corporativos (extra: $19 USD/año c/u)",
+          "5 correos corporativos (extra: $349 MXN / $19 USD al año c/u)",
           "En español o inglés; bilingüe u otros idiomas como extra",
           "Entrega en 14–21 días hábiles · 6 rondas de revisión",
         ],
@@ -92,7 +92,7 @@ export default {
       systems: {
         name: "Systems / App",
         desc: "Apps web a medida con base de datos, login, paneles o sistemas internos.",
-        renewal: "Hosting de la app: $79–149 USD / mes",
+        renewal: "Hosting de la app: $1,399–2,699 MXN ($79–149 USD) / mes",
         items: [
           "Sitios de 7+ páginas o sistemas con roles, reportes y filtros",
           "App web a la medida (con base de datos)",
@@ -116,9 +116,9 @@ export default {
     care: {
       title: "After launch",
       items: [
-        { name: "Yearly renewal", price: "$99–199 USD / year", note: "Domain, hosting and SSL, with 2 content updates a year." },
-        { name: "Extra update", price: "$29 USD", note: "Per request: up to 10 images or one block of text." },
-        { name: "Monthly plan", price: "$39 USD / month", note: "4 updates a month, for businesses that update often." },
+        { name: "Yearly renewal", price: "$99–199 USD / year", note: "Domain, hosting and SSL, with 2 content updates a year ($1,799–3,699 MXN)." },
+        { name: "Extra update", price: "$29 USD", note: "Per request: up to 10 images or one block of text ($549 MXN)." },
+        { name: "Monthly plan", price: "$39 USD / month", note: "4 updates a month, for businesses that update often ($699 MXN)." },
       ],
     },
     compareCta: "Not sure which plan? Try the quote calculator",

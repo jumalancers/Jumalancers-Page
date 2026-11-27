@@ -17,6 +17,8 @@
  * - Rango: mínimo = total; máximo = total × 1.15 (redondeo a 10).
  */
 
+import { money } from "../../money.js";
+
 export const CONTACT = {
   phone: "+52 664 425 7324",
   website: "https://jumalancers.com",
@@ -329,12 +331,12 @@ export function multiplierLabel(m, t) {
   return `${t(`quote.multipliers.${m.key}`)} ×${m.value.toFixed(2)}`;
 }
 
-/** Precio legible: "$599 – $689", "Desde $2,999" o "$8,000+". */
-export function priceText(q, t) {
-  if (q.priceMode === "over") return `$${formatUSD(HARD_CAP)}+`;
+/** Precio legible en la moneda del idioma (es = MXN, en = USD): "$10,999 – $12,999", "Desde $54,999"... */
+export function priceText(q, t, lang = "en") {
+  if (q.priceMode === "over") return `${money(HARD_CAP, lang)}+`;
   if (q.priceMode === "from")
-    return `${t("quote.from")} $${formatUSD(q.priceLow)}`;
-  return `$${formatUSD(q.priceLow)} – $${formatUSD(q.priceHigh)}`;
+    return `${t("quote.from")} ${money(q.priceLow, lang)}`;
+  return `${money(q.priceLow, lang)} – ${money(q.priceHigh, lang)}`;
 }
 
 /** Nombre del plan en el idioma activo. */

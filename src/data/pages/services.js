@@ -8,7 +8,7 @@ export const SERVICES = {
     es: {
       metaTitle: "Diseño de páginas web para negocios | Jumalancers",
       metaDesc:
-        "Páginas web a medida para negocios en México y EE. UU.: rápidas, adaptables a móvil y listas para Google. Desde $599 USD con dominio y hosting el primer año.",
+        "Páginas web a medida para negocios en México y EE. UU.: rápidas, adaptables a móvil y listas para Google. Desde $10,999 MXN ($599 USD) con dominio y hosting el primer año.",
       eyebrow: "Páginas web",
       h1: "Diseño de páginas web para",
       accent: "negocios",
@@ -46,12 +46,12 @@ export const SERVICES = {
         "Negocios en EE. UU. que atienden a clientes en inglés y en español",
       ],
       price:
-        "Starter $599 USD (1 página, 7–10 días hábiles) · Business $1,199 USD (2–3 páginas, 10–14 días) · Premium $1,999 USD (4–6 páginas, 14–21 días). Precio fijo en USD; desde el segundo año la renovación es de $99, $149 o $199 USD al año.",
+        "Starter $10,999 MXN ($599 USD; 1 página, 7–10 días hábiles) · Business $21,999 MXN ($1,199 USD; 2–3 páginas, 10–14 días) · Premium $36,999 MXN ($1,999 USD; 4–6 páginas, 14–21 días). Precio fijo en pesos o dólares; desde el segundo año la renovación es de $1,799, $2,699 o $3,699 MXN ($99, $149 o $3,699 MXN ($199 USD)) al año.",
       projectNote: "Sitio bilingüe para un despacho legal en Tijuana, con servicios por área y modo claro y oscuro.",
       faqs: [
         {
           q: "¿Cuánto cuesta una página web para mi negocio?",
-          a: "Starter cuesta $599 USD (1 página), Business $1,199 USD (2 a 3 páginas) y Premium $1,999 USD (4 a 6 páginas). Los tres incluyen diseño personalizado, dominio, hosting y SSL del primer año y correos corporativos. Funciones como blog, citas, pagos o idiomas adicionales se cotizan aparte.",
+          a: "Starter cuesta $10,999 MXN ($599 USD; 1 página), Business $21,999 MXN ($1,199 USD; 2 a 3 páginas) y Premium $36,999 MXN ($1,999 USD; 4 a 6 páginas). Los tres incluyen diseño personalizado, dominio, hosting y SSL del primer año y correos corporativos. Funciones como blog, citas, pagos o idiomas adicionales se cotizan aparte.",
         },
         {
           q: "¿Cuánto tarda en estar lista?",
@@ -59,14 +59,14 @@ export const SERVICES = {
         },
         {
           q: "¿Puedo cambiar el contenido después?",
-          a: "Sí. La renovación anual incluye 2 cambios al año; cada cambio extra cuesta $29 USD y hay un plan de $39 USD al mes con 4 cambios. Si necesitas actualizar productos o precios tú mismo, se puede agregar un panel de administración.",
+          a: "Sí. La renovación anual incluye 2 cambios al año; cada cambio extra cuesta $549 MXN ($29 USD) y hay un plan de $699 MXN ($39 USD) al mes con 4 cambios. Si necesitas actualizar productos o precios tú mismo, se puede agregar un panel de administración.",
         },
       ],
     },
     en: {
       metaTitle: "Small Business Website Design | Jumalancers",
       metaDesc:
-        "Custom websites for businesses in the US and Mexico: fast, mobile-friendly and ready for Google. From $599 USD with domain and hosting for the first year.",
+        "Custom websites for businesses in the US and Mexico: fast, mobile-friendly and ready for Google. From $599 USD ($10,999 MXN) with domain and hosting for the first year.",
       eyebrow: "Websites",
       h1: "Website design for",
       accent: "small businesses",
@@ -104,12 +104,12 @@ export const SERVICES = {
         "US businesses that serve customers in English and Spanish",
       ],
       price:
-        "Starter $599 USD (1 page, 7–10 business days) · Business $1,199 USD (2–3 pages, 10–14 days) · Premium $1,999 USD (4–6 pages, 14–21 days). Fixed USD pricing; from the second year, renewal is $99, $149 or $199 USD a year.",
+        "Starter $599 USD ($10,999 MXN; 1 page, 7–10 business days) · Business $1,199 USD ($21,999 MXN; 2–3 pages, 10–14 days) · Premium $1,999 USD ($36,999 MXN; 4–6 pages, 14–21 days). Fixed pricing in USD or MXN; from the second year, renewal is $99, $149 or $199 USD ($1,799, $2,699 or $3,699 MXN) a year.",
       projectNote: "Bilingual website for a law firm in Tijuana, with services by practice area and light and dark mode.",
       faqs: [
         {
           q: "How much does a website for my business cost?",
-          a: "Starter is $599 USD (1 page), Business $1,199 USD (2 to 3 pages) and Premium $1,999 USD (4 to 6 pages). All three include custom design, domain, hosting and SSL for the first year, and business email. Features like a blog, booking, payments or extra languages are quoted separately.",
+          a: "Starter is $599 USD ($10,999 MXN; 1 page), Business $1,199 USD ($21,999 MXN; 2 to 3 pages) and Premium $1,999 USD ($36,999 MXN; 4 to 6 pages). All three include custom design, domain, hosting and SSL for the first year, and business email. Features like a blog, booking, payments or extra languages are quoted separately.",
         },
         {
           q: "How long does it take?",
@@ -117,7 +117,7 @@ export const SERVICES = {
         },
         {
           q: "Can I change the content later?",
-          a: "Yes. The yearly renewal includes 2 content updates; each extra update is $29 USD, and there's a $39 USD monthly plan with 4 updates. If you need to update products or prices yourself, we can add an admin panel.",
+          a: "Yes. The yearly renewal includes 2 content updates; each extra update is $29 USD ($549 MXN), and there's a $39 USD ($699 MXN) monthly plan with 4 updates. If you need to update products or prices yourself, we can add an admin panel.",
         },
       ],
     },
@@ -129,7 +129,7 @@ export const SERVICES = {
     es: {
       metaTitle: "Landing pages para campañas de Google y Meta | Jumalancers",
       metaDesc:
-        "Landing pages con un solo objetivo: que te escriban, coticen o compren. Formulario, WhatsApp y estructura de venta clara. Desde $599 USD, lista en 7–10 días hábiles.",
+        "Landing pages con un solo objetivo: que te escriban, coticen o compren. Formulario, WhatsApp y estructura de venta clara. Desde $10,999 MXN ($599 USD), lista en 7–10 días hábiles.",
       eyebrow: "Landing pages",
       h1: "Landing pages que",
       accent: "convierten",
@@ -166,7 +166,7 @@ export const SERVICES = {
         "Un servicio o promoción específica que merece su propia página",
       ],
       price:
-        "La landing page es el plan Starter: $599 USD, precio fijo, con dominio, hosting y SSL del primer año. Renovación desde el segundo año: $99 USD al año con 2 cambios incluidos.",
+        "La landing page es el plan Starter: $10,999 MXN ($599 USD), precio fijo, con dominio, hosting y SSL del primer año. Renovación desde el segundo año: $1,799 MXN ($99 USD) al año con 2 cambios incluidos.",
       projectNote: "Sitio para una empresa de importación y exportación que lleva al visitante directo a pedir su cotización, con un formulario que llega por correo.",
       faqs: [
         {
@@ -186,7 +186,7 @@ export const SERVICES = {
     en: {
       metaTitle: "Landing Pages for Google & Meta Ads | Jumalancers",
       metaDesc:
-        "Landing pages with one goal: get people to message you, request a quote or buy. Contact form, WhatsApp and a clear sales structure. From $599 USD, ready in 7–10 business days.",
+        "Landing pages with one goal: get people to message you, request a quote or buy. Contact form, WhatsApp and a clear sales structure. From $599 USD ($10,999 MXN), ready in 7–10 business days.",
       eyebrow: "Landing pages",
       h1: "Landing pages that",
       accent: "convert",
@@ -223,7 +223,7 @@ export const SERVICES = {
         "A specific service or promotion that deserves its own page",
       ],
       price:
-        "A landing page is the Starter plan: $599 USD, fixed price, with domain, hosting and SSL for the first year. Renewal from the second year: $99 USD a year with 2 updates included.",
+        "A landing page is the Starter plan: $599 USD ($10,999 MXN), fixed price, with domain, hosting and SSL for the first year. Renewal from the second year: $99 USD ($1,799 MXN) a year with 2 updates included.",
       projectNote: "Website for an import/export company that takes visitors straight to a quote request, with a form delivered by email.",
       faqs: [
         {
@@ -248,7 +248,7 @@ export const SERVICES = {
     es: {
       metaTitle: "Sistemas web a medida: pedidos, cotizaciones y dashboards | Jumalancers",
       metaDesc:
-        "Desarrollo de sistemas web a medida: catálogos con cotizador, pedidos, inventario, citas, dashboards con login y roles. Desde $2,999 USD.",
+        "Desarrollo de sistemas web a medida: catálogos con cotizador, pedidos, inventario, citas, dashboards con login y roles. Desde $54,999 MXN ($2,999 USD).",
       eyebrow: "Sistemas web a medida",
       h1: "Sistemas web",
       accent: "a medida",
@@ -285,12 +285,12 @@ export const SERVICES = {
         "Sitios grandes, de 7 páginas o más",
       ],
       price:
-        "Plan Systems / App desde $2,999 USD; el precio final, el alcance y el tiempo se definen según el proyecto. El hosting de la aplicación va de $79 a $149 USD al mes.",
+        "Plan Systems / App desde $54,999 MXN ($2,999 USD); el precio final, el alcance y el tiempo se definen según el proyecto. El hosting de la aplicación va de $1,399 a $2,699 MXN ($79 a $2,699 MXN ($149 USD)) al mes.",
       projectNote: "Catálogo en línea y sistema administrativo con cotizaciones, pedidos, inventario, clientes, proveedores y etiquetas con código de barras.",
       faqs: [
         {
           q: "¿Cuánto cuesta un sistema web a medida?",
-          a: "Parte de $2,999 USD. El precio final depende de lo que necesites (módulos, usuarios, integraciones) y queda cerrado en la propuesta antes de empezar. El hosting de la app cuesta entre $79 y $149 USD al mes.",
+          a: "Parte de $54,999 MXN ($2,999 USD). El precio final depende de lo que necesites (módulos, usuarios, integraciones) y queda cerrado en la propuesta antes de empezar. El hosting de la app cuesta entre $79 y $2,699 MXN ($149 USD) al mes.",
         },
         {
           q: "¿Puedo usarlo desde el celular?",
@@ -305,7 +305,7 @@ export const SERVICES = {
     en: {
       metaTitle: "Custom Web Apps: Orders, Quotes & Dashboards | Jumalancers",
       metaDesc:
-        "Custom web app development: quoting catalogs, orders, inventory, booking, dashboards with logins and user roles. From $2,999 USD.",
+        "Custom web app development: quoting catalogs, orders, inventory, booking, dashboards with logins and user roles. From $2,999 USD ($54,999 MXN).",
       eyebrow: "Custom web apps",
       h1: "Custom",
       accent: "web apps",
@@ -342,12 +342,12 @@ export const SERVICES = {
         "Large websites with 7 or more pages",
       ],
       price:
-        "Systems / App plan from $2,999 USD; the final price, scope and timeline depend on the project. App hosting is $79 to $149 USD a month.",
+        "Systems / App plan from $2,999 USD ($54,999 MXN); the final price, scope and timeline depend on the project. App hosting is $79 to $149 USD ($1,399 to $2,699 MXN) a month.",
       projectNote: "Online catalog and admin system with quotes, orders, inventory, clients, suppliers and barcode labels.",
       faqs: [
         {
           q: "How much does a custom web app cost?",
-          a: "It starts at $2,999 USD. The final price depends on what you need (modules, users, integrations) and is fixed in the proposal before we start. App hosting costs $79 to $149 USD a month.",
+          a: "It starts at $2,999 USD ($54,999 MXN). The final price depends on what you need (modules, users, integrations) and is fixed in the proposal before we start. App hosting costs $79 to $149 USD ($1,399 to $2,699 MXN) a month.",
         },
         {
           q: "Can I use it on my phone?",
@@ -404,7 +404,7 @@ export const SERVICES = {
         "Negocios que cotizan por WhatsApp y quieren ordenar sus pedidos",
       ],
       price:
-        "Un catálogo sencillo puede caber en los planes de sitio web; los pagos en línea son un extra. Con carrito, panel de administración o base de datos se cotiza como proyecto a medida (desde $2,999 USD). El cotizador te da un estimado en un par de minutos.",
+        "Un catálogo sencillo puede caber en los planes de sitio web; los pagos en línea son un extra. Con carrito, panel de administración o base de datos se cotiza como proyecto a medida (desde $54,999 MXN ($2,999 USD)). El cotizador te da un estimado en un par de minutos.",
       projectNote: "Catálogo de productos con categorías y búsqueda, cotizaciones y rastreo de pedidos.",
       faqs: [
         {
@@ -461,7 +461,7 @@ export const SERVICES = {
         "Businesses that quote over WhatsApp and want their orders organized",
       ],
       price:
-        "A simple catalog can fit within the website plans; online payments are an add-on. With a cart, admin panel or database, it's quoted as a custom project (from $2,999 USD). The quote tool gives you an estimate in a couple of minutes.",
+        "A simple catalog can fit within the website plans; online payments are an add-on. With a cart, admin panel or database, it's quoted as a custom project (from $2,999 USD ($54,999 MXN)). The quote tool gives you an estimate in a couple of minutes.",
       projectNote: "Product catalog with categories and search, quotes and order tracking.",
       faqs: [
         {
@@ -529,7 +529,7 @@ export const SERVICES = {
         "Negocios que atienden clientes en dos idiomas",
       ],
       price:
-        "La configuración SEO viene incluida en Starter ($599 USD), Business ($1,199 USD) y Premium ($1,999 USD). Premium agrega SEO avanzado, rendimiento y analítica.",
+        "La configuración SEO viene incluida en Starter ($10,999 MXN / $10,999 MXN ($599 USD)), Business ($21,999 MXN / $21,999 MXN ($1,199 USD)) y Premium ($36,999 MXN / $36,999 MXN ($1,999 USD)). Premium agrega SEO avanzado, rendimiento y analítica.",
       projectNote: "Sitio bilingüe con SEO técnico construido con Astro.",
       faqs: [
         {
@@ -592,7 +592,7 @@ export const SERVICES = {
         "Businesses that serve customers in two languages",
       ],
       price:
-        "SEO setup is included in Starter ($599 USD), Business ($1,199 USD) and Premium ($1,999 USD). Premium adds advanced SEO, performance and analytics.",
+        "SEO setup is included in Starter ($599 USD / $10,999 MXN), Business ($1,199 USD / $21,999 MXN) and Premium ($1,999 USD / $36,999 MXN). Premium adds advanced SEO, performance and analytics.",
       projectNote: "Bilingual website with technical SEO built with Astro.",
       faqs: [
         {
