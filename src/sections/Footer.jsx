@@ -5,6 +5,7 @@ import { SITE, waLink } from "../data/site.js";
 import { SERVICES as SERVICE_PAGES } from "../data/pages/services.js";
 import { SERVICE_KEYS } from "../routes.js";
 import { PROCESS_PAGE } from "../data/pages/process.js";
+import { TIJUANA_PAGE } from "../data/pages/tijuana.js";
 
 // Mismos enlaces y textos que el Navbar (nav.*)
 const NAV_LINKS = [
@@ -165,6 +166,11 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href={pageHref("tijuana")} className={linkCls}>
+                  {TIJUANA_PAGE[lang].eyebrow}
+                </a>
+              </li>
               <li>
                 <a href={pageHref("process")} className={linkCls}>
                   {PROCESS_PAGE[lang].eyebrow}

@@ -6,6 +6,7 @@ import { getPage, pathOf } from "./routes.js";
 import { SERVICES as SERVICE_PAGES, PAGE_UI, PROJECT_SERVICE } from "./data/pages/services.js";
 import { PROJECTS } from "./data/projects.js";
 import { PROCESS_PAGE } from "./data/pages/process.js";
+import { TIJUANA_PAGE, PRICES } from "./data/pages/tijuana.js";
 import { POSTS, BLOG_UI, blogCover } from "./data/blog/posts.js";
 
 export const BASE_URL = "https://jumalancers.com";
@@ -59,6 +60,10 @@ export function metaFor(lang, key = "home") {
   const url = BASE_URL + page[lang];
   if (page.type === "service") {
     const c = SERVICE_PAGES[key][lang];
+    return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
+  }
+  if (page.type === "local") {
+    const c = TIJUANA_PAGE[lang];
     return { ...base, title: c.metaTitle, description: c.metaDesc, ogTitle: c.metaTitle, ogDescription: c.metaDesc, url };
   }
   if (page.type === "notfound") {
@@ -277,6 +282,41 @@ function pageNodes(lang, page, url, businessId) {
         { "@type": "Country", name: "United States", identifier: "US" },
       ],
       availableLanguage: ["Spanish", "English"],
+    });
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: c.faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+    });
+  }
+  if (page.type === "local") {
+    const c = TIJUANA_PAGE[lang];
+    const num = (v) => Number(String(v).replace(/[^0-9.]/g, ""));
+    nodes.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: ui.home, item: homeUrl },
+        { "@type": "ListItem", position: 2, name: c.eyebrow, item: url },
+      ],
+    });
+    nodes.push({
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: `${c.h1} ${c.accent}`,
+      serviceType: c.eyebrow,
+      description: c.metaDesc,
+      url,
+      provider: { "@id": businessId },
+      areaServed: { "@type": "City", name: "Tijuana" },
+      offers: PRICES.filter((r) => !r.mxnEn).map((r) => ({
+        "@type": "Offer",
+        name: r.plan,
+        priceSpecification: [
+          { "@type": "PriceSpecification", price: num(r.mxn), priceCurrency: "MXN" },
+          { "@type": "PriceSpecification", price: num(r.usd), priceCurrency: "USD" },
+        ],
+      })),
     });
     nodes.push({
       "@type": "FAQPage",

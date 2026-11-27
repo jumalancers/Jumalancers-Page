@@ -24,6 +24,7 @@ export const PAGES = [
   { key: "home", type: "home", es: "/", en: "/en/" },
   ...SERVICE_KEYS.map((k) => ({ key: k, type: "service", ...SERVICE_PATHS[k] })),
   { key: "process", type: "process", es: "/proceso/", en: "/en/process/" },
+  { key: "tijuana", type: "local", es: "/paginas-web-tijuana/", en: "/en/web-design-tijuana/" },
   { key: "blog", type: "blog", es: "/blog/", en: "/en/blog/" },
   ...POSTS.map((p) => ({ key: `post-${p.id}`, type: "post", id: p.id, es: `/blog/${p.es.slug}/`, en: `/en/blog/${p.en.slug}/` })),
   ...PROJECTS.filter((p) => PROJECT_SLUGS[p.id]).map((p) => ({

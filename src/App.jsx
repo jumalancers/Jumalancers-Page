@@ -17,6 +17,7 @@ import ProjectPage from "./pages/ProjectPage.jsx";
 import ProcessPage from "./pages/ProcessPage.jsx";
 import { BlogIndex, BlogPost } from "./pages/BlogPages.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import TijuanaPage from "./pages/TijuanaPage.jsx";
 import { useLang } from "./i18n.jsx";
 import { getPage } from "./routes.js";
 
@@ -56,6 +57,8 @@ function App() {
           <BlogIndex />
         ) : page.type === "post" ? (
           <BlogPost id={page.id} />
+        ) : page.type === "local" ? (
+          <TijuanaPage />
         ) : page.type === "notfound" ? (
           <NotFound />
         ) : (

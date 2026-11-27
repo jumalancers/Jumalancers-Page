@@ -16,6 +16,8 @@
   Cache-Control: public, max-age=0, must-revalidate
 /proceso/*
   Cache-Control: public, max-age=0, must-revalidate
+/paginas-web-tijuana/*
+  Cache-Control: public, max-age=0, must-revalidate
 /blog/*
   Cache-Control: public, max-age=0, must-revalidate
 /*.html
